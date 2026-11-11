@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="كام الفلل العائلية — تجربة سكن فاخرة وفلل سكنية مكونة من 5 غرف نوم في حي القيروان، الرياض من شركة كام العقارية." />
-  <title>كام الفلل العائلية — رفاهية السكن في قلب الرياض — كام العقارية</title>
-  <!-- Favicon -->
+  <title>كام الفلل العائلية — حي القيروان، الرياض | شركة كام العقارية</title>
+  <meta name="description" content="كام الفلل العائلية — ملاذك السكني الخاص في حي القيروان، الرياض. 20 مسكناً حصرياً توفر خصوصية تامة وجودة تدوم، وتجمع بين روح العمارة النجدية وتفاصيل الحياة المعاصرة." />
+  
+  <!-- Favicon Links -->
   <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
   <link rel="apple-touch-icon" href="./assets/images/favicon.png" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Fonts: Tajawal -->
+  <!-- Google Font: Tajawal -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
 
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -26,102 +26,116 @@
               primary: '#16191E',
               deep: '#1F242D',
               surface: '#262C36',
+              light: '#2E3542',
             },
             stone: {
-              accent: '#847668',
               muted: '#847668',
-              light: '#E5E7EB',
+              accent: '#847668',
+              dark: '#5C5248',
+              light: '#A39587',
             },
             surface: {
               light: '#F9FAFB',
               card: '#F3F4F6',
               border: '#E5E7EB',
-            },
+            }
           },
           fontFamily: {
-            sans: ['Tajawal', 'system-ui', 'sans-serif'],
-            display: ['Tajawal', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
+            sans: ['Tajawal', 'sans-serif'],
+            display: ['Tajawal', 'sans-serif'],
+          }
+        }
+      }
+    }
   </script>
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
     body {
       font-family: 'Tajawal', sans-serif;
-    }
-    section[id] {
-      scroll-margin-top: 88px;
-    }
-
-    /* Custom Minimal Scrollbar */
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: #16191E; }
-    ::-webkit-scrollbar-thumb { background: #847668; border-radius: 2px; }
-
-    /* Lightbox Modal */
-    #image-modal.active {
-      opacity: 1;
-      pointer-events: auto;
+      background-color: #FFFFFF;
+      color: #16191E;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Subtle pulse animation for interactive indicators */
-    @keyframes gentlePulse {
-      0%, 100% { opacity: 0.9; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.96); }
-    }
-    .pulse-indicator {
-      animation: gentlePulse 2.5s infinite ease-in-out;
-    }
-
-    /* Luxury Animated Golden Border Beam */
-    @keyframes borderRotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+    /* Animated Beam Button */
     .animated-beam-btn {
       position: relative;
-      overflow: hidden;
-      padding: 1.5px;
-      background: rgba(197, 168, 128, 0.2);
-      border-radius: 2px;
       display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      background: #1F242D;
+      border-radius: 0.125rem;
+      border: 1px solid rgba(132, 118, 104, 0.4);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      text-decoration: none;
     }
     .animated-beam-btn::before {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(transparent, transparent 65%, #C5A880 85%, transparent 100%);
-      animation: borderRotate 4s linear infinite;
+      inset: -2px;
+      background: linear-gradient(90deg, transparent, rgba(132, 118, 104, 0.8), transparent);
+      animation: beam 3.5s linear infinite;
     }
-    .animated-beam-btn > span,
-    .animated-beam-btn > a {
+    @keyframes beam {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .animated-beam-btn span {
       position: relative;
       z-index: 1;
-      background: rgba(22, 25, 30, 0.75);
+    }
+    .animated-beam-btn:hover {
+      background: #16191E;
+      border-color: #847668;
+      box-shadow: 0 0 15px rgba(132, 118, 104, 0.25);
+    }
+
+    /* Custom Scrollbar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Lightbox Modal */
+    #image-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(22, 25, 30, 0.95);
       backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    #image-modal.active {
+      display: flex;
+    }
+
+    /* Editorial Stop Transition */
+    .photo-stop {
+      transition: opacity 0.3s ease;
     }
   </style>
 </head>
-
-<body class="bg-white text-gray-900 antialiased text-right selection:bg-slate-primary selection:text-white overflow-x-hidden w-full">
+<body class="bg-white text-slate-primary antialiased selection:bg-stone-muted selection:text-white">
 
   <!-- ══════════════════════════════════════════════════════ -->
-  <!-- HEADER & NAVIGATION                                    -->
+  <!-- STICKY CORPORATE NAVBAR                                -->
   <!-- ══════════════════════════════════════════════════════ -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-slate-primary/95 backdrop-blur-md border-b border-white/[0.08] transition-all duration-300">
+  <header class="sticky top-0 z-50 bg-slate-primary/95 backdrop-blur-md border-b border-white/10 transition-all duration-300">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20 lg:h-24">
         
-        <!-- Logo & Back to Main -->
+        <!-- Logo & Back to Main Portal -->
         <div class="flex items-center gap-4 sm:gap-6">
           <a href="index.html" class="group flex items-center gap-3">
             <img
@@ -134,33 +148,24 @@
           <div class="hidden md:block w-px h-6 bg-white/15"></div>
           <a href="index.html" class="hidden md:inline-flex items-center gap-2 text-xs font-semibold text-gray-300 hover:text-white transition-colors">
             <svg class="w-3.5 h-3.5 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-            العودة للرئيسية
+            <span>العودة للرئيسية</span>
           </a>
         </div>
 
-        <!-- Desktop Navigation -->
-        <div class="hidden lg:flex items-center gap-8 text-right">
-          <a href="index.html" class="text-xs font-semibold tracking-wider text-white/80 hover:text-white transition-colors">الرئيسية</a>
-          <a href="#overview" class="text-xs font-semibold tracking-wider text-white/80 hover:text-white transition-colors">نظرة عامة</a>
-          <a href="#gallery" class="text-xs font-semibold tracking-wider text-white/80 hover:text-white transition-colors">معرض الصور</a>
-          <a href="#metrics" class="text-xs font-semibold tracking-wider text-white/80 hover:text-white transition-colors">أرقام ومواصفات المشروع</a>
-          
-          <a href="#inquiry" class="animated-beam-btn group">
-            <span class="inline-flex items-center gap-2 text-white px-5 py-2.5 text-xs font-bold tracking-wide transition-colors group-hover:text-stone-accent">
-              سجل اهتمامك
-            </span>
-          </a>
+        <!-- Section Navigation Links -->
+        <div class="hidden lg:flex items-center gap-8 text-xs font-medium text-gray-300">
+          <a href="#overview" class="hover:text-white transition-colors">المشروع</a>
+          <a href="#plans" class="hover:text-white transition-colors">النماذج السكنية</a>
+          <a href="#blueprint" class="hover:text-white transition-colors">المخطط المعماري</a>
+          <a href="#interiors" class="hover:text-white transition-colors">التصاميم الداخلية</a>
+          <a href="#gallery" class="hover:text-white transition-colors">معرض الصور</a>
+          <a href="#inquiry" class="hover:text-white transition-colors">التواصل</a>
         </div>
 
-        <!-- Mobile Controls -->
-        <div class="flex items-center gap-2 sm:gap-3 lg:hidden">
-          <a href="index.html" class="inline-flex items-center text-xs font-semibold text-white/80 border border-white/20 px-3 py-1.5 rounded-sm">
-            الرئيسية
-          </a>
+        <!-- Action Button -->
+        <div class="flex items-center gap-3">
           <a href="#inquiry" class="animated-beam-btn">
-            <span class="inline-flex items-center text-xs font-bold text-white px-3 py-1.5 rounded-sm">
-              سجل اهتمامك
-            </span>
+            <span>سجل اهتمامك</span>
           </a>
         </div>
 
@@ -168,107 +173,109 @@
     </nav>
   </header>
 
-
   <!-- ══════════════════════════════════════════════════════ -->
-  <!-- HERO SECTION (#overview)                               -->
+  <!-- PROJECT HEADER & KEY METRICS (#overview)               -->
   <!-- ══════════════════════════════════════════════════════ -->
-  <section id="overview" class="relative pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-44 lg:pb-32 bg-slate-primary overflow-hidden border-b border-white/[0.08]">
+  <section id="overview" class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-28 bg-slate-primary text-white overflow-hidden border-b border-white/[0.08]">
     
-    <!-- Hero Background Image with Subtle Architectural Dark Overlay -->
-    <div class="absolute inset-0 z-0">
-      <img
-        src="./صور المشاريع/كام الفلل العائلية/69e0b988ad0778e2fae9d95d_Header.jpg"
-        alt="خلفية كام الفلل العائلية"
-        class="w-full h-full object-cover object-center opacity-25 scale-105 transform pointer-events-none"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-primary via-slate-primary/90 to-slate-primary/65"></div>
+    <!-- Hero Background Very Dimmed Ambient Video (معتم جداً يا دوب يبان مع الخلفية السوداء) -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-15 filter brightness-50 contrast-125">
+        <source src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/6a6856fbf454fee2ee37648a_6a6af2ad3db17a6091e3b791_Family Villas Website Header Video_mp4.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-slate-primary/80"></div>
     </div>
+    
+    <!-- Hero Background Subtle Ambient Grid -->
+    <div class="absolute inset-0 bg-[radial-gradient(#847668_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none z-1"></div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Breadcrumb Hierarchy -->
-      <nav class="flex items-center gap-2 text-xs text-gray-400 mb-6 sm:mb-8 font-medium">
-        <a href="index.html" class="hover:text-white transition-colors">الرئيسية</a>
-        <span class="text-gray-600">/</span>
-        <a href="index.html#portfolio" class="hover:text-white transition-colors">مشاريعنا</a>
-        <span class="text-gray-600">/</span>
-        <span class="text-gray-200 font-semibold">كام الفلل العائلية</span>
-      </nav>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        <!-- Hero Details (7 cols) -->
-        <div class="lg:col-span-7 text-right">
+        <!-- Left Column: Project Narrative & Executive Data (7 cols) -->
+        <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-right">
           
-          <!-- Badges Bar -->
-          <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-5">
-            <!-- Elegant stone-bordered status badge linking to #inquiry -->
-            <a href="#inquiry" class="bg-white/5 border border-white/20 text-stone-muted hover:text-white hover:border-white/40 text-xs px-3 py-1.5 rounded-sm inline-flex items-center transition-colors cursor-pointer" title="انقر لتسجيل الاهتمام">
-              قريباً
+          <!-- Category & Discreet Status Badge -->
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="text-xs font-mono tracking-widest uppercase text-stone-muted bg-white/5 border border-white/10 px-3 py-1 rounded-sm">
+              مجتمع سكني خاص — حي القيروان
+            </span>
+            <a href="#inquiry" class="border border-stone-muted/50 text-stone-muted/90 bg-white/5 px-3 py-1 text-xs rounded-full cursor-pointer hover:border-stone-muted transition-colors flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-stone-muted"></span>
+              <span>قريباً — احجز أسبقيتك</span>
             </a>
-            <span class="text-xs font-semibold text-gray-300 border border-white/10 px-3 py-1.5 rounded-sm bg-white/5">
-              حي القيروان، الرياض، المملكة العربية السعودية
-            </span>
-            <span class="text-xs font-semibold text-gray-300 border border-white/10 px-3 py-1.5 rounded-sm bg-white/5">
-              مجمع سكني
-            </span>
-            <span class="text-xs font-semibold text-gray-300 border border-white/10 px-3 py-1.5 rounded-sm bg-white/5">
-              فلل سكنية فاخرة مكونة من 5 غرف نوم
-            </span>
           </div>
 
-          <!-- Project Official Title -->
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.25] mb-3 font-display">
-            كام الفلل العائلية
-          </h1>
+          <!-- Main Title & Tagline -->
+          <div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white font-display mb-3">
+              كام الفلل العائلية
+            </h1>
+            <p class="text-base sm:text-lg text-gray-300 font-normal leading-relaxed">
+              ملاذك الخاص — مجتمع سكني حصري في حي القيروان، الرياض
+            </p>
+          </div>
 
-          <!-- Official Tagline -->
-          <h2 class="text-xl sm:text-2xl font-semibold text-gray-200 mb-6 font-display">
-            رفاهية السكن في قلب الرياض
-          </h2>
+          <!-- Editorial Overview Text -->
+          <div class="relative pr-4 border-r-2 border-stone-muted/40">
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
+              ملاذ سكني خاص صُمم لنخبة تدرك قيمة التميز. 20 مسكناً حَصرياً وُضعت بقصد لتوفر خصوصية تامة وجودة تدوم، وتجمع بين روح العمارة النجدية وتفاصيل الحياة المعاصرة في أرقى أحياء شمال الرياض.
+            </p>
+          </div>
 
-          <div class="w-12 h-px bg-white/25 mb-6"></div>
-
-          <!-- EXACT Overview Text (Word-for-Word) -->
-          <p class="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mb-8 sm:mb-10 font-normal">
-            تجربة سكن فاخرة لأكثر سكان الرياض تميزاً. تجتمع الخصوصية والجودة والموقع الاستراتيجي في ملاذ سكني يكرم التراث ويتبنى في الوقت ذاته أسلوب الحياة المعاصر.
-          </p>
-
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap gap-4 items-center">
-            
-            <a href="#inquiry"
-               class="inline-flex items-center gap-2.5 bg-white text-slate-primary hover:bg-gray-100 px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold transition-all duration-300 shadow-md rounded-sm">
-              <span>تسجيل الاهتمام بالمشروع</span>
-              <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-            </a>
-
-            <!-- Google Maps Link with Map Pin Icon -->
+          <!-- Location Link -->
+          <div>
             <a href="https://maps.app.goo.gl/B4QtaZXjB1DKVim8A" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 border border-white/20 hover:border-white text-white px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold transition-all duration-300 hover:bg-white/10 rounded-sm">
-              <svg class="w-4 h-4 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-              موقع المشروع على خرائط Google
+               class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-stone-muted hover:text-white transition-colors bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2.5 rounded-sm">
+              <svg class="w-4 h-4 text-stone-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <span>حي القيروان، شمال الرياض — عرض الموقع على الخريطة</span>
+              <svg class="w-3.5 h-3.5 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
             </a>
+          </div>
+
+          <!-- Executive Metric Tiles (2x2 Grid) -->
+          <div class="grid grid-cols-2 gap-3 sm:gap-4 pt-2">
+            
+            <div class="p-3.5 sm:p-4 bg-slate-deep/80 border border-white/[0.08] rounded-sm text-right">
+              <span class="text-[11px] font-mono text-gray-400 block mb-1">إجمالي المساكن</span>
+              <span class="text-base sm:text-lg lg:text-xl font-bold text-white block">20 مسكناً فاخراً</span>
+            </div>
+
+            <div class="p-3.5 sm:p-4 bg-slate-deep/80 border border-white/[0.08] rounded-sm text-right">
+              <span class="text-[11px] font-mono text-gray-400 block mb-1">النماذج المعمارية</span>
+              <span class="text-base sm:text-lg lg:text-xl font-bold text-white block">3 نماذج مدروسة</span>
+            </div>
+
+            <div class="p-3.5 sm:p-4 bg-slate-deep/80 border border-white/[0.08] rounded-sm text-right">
+              <span class="text-[11px] font-mono text-gray-400 block mb-1">الموقع</span>
+              <span class="text-base sm:text-lg lg:text-xl font-bold text-white block">حي القيروان، الرياض</span>
+            </div>
+
+            <div class="p-3.5 sm:p-4 bg-slate-deep/80 border border-white/[0.08] rounded-sm text-right">
+              <span class="text-[11px] font-mono text-gray-400 block mb-1">المرافق الخاصة</span>
+              <span class="text-xs sm:text-sm font-bold text-white block leading-snug">مسابح خاصة • مصاعد مستقلة • مجالس منفصلة</span>
+            </div>
 
           </div>
 
         </div>
 
-        <!-- Featured Villa Visual Showcase (5 cols) -->
-        <div class="lg:col-span-5">
-          <div class="relative rounded-sm overflow-hidden border border-white/15 hover:border-white/35 transition-all duration-500 shadow-2xl group bg-slate-deep cursor-pointer"
-               onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/69e0b988ad0778e2fae9d95d_Header.jpg', 'الواجهة الرئيسية — كام الفلل العائلية')">
-            <div class="aspect-[4/3] sm:aspect-[5/4] overflow-hidden">
+        <!-- Right Column: Hero Visual Card (5 cols) -->
+        <div class="lg:col-span-5 w-full">
+          <div class="relative rounded-sm overflow-hidden border border-white/20 hover:border-stone-muted/60 transition-all duration-500 shadow-2xl bg-slate-deep cursor-pointer group"
+               onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/69e0b988ad0778e2fae9d95d_Header.jpg', 'كام الفلل العائلية — الواجهة المعمارية الرئيسية')">
+            <div class="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] overflow-hidden">
               <img
                 src="./صور المشاريع/كام الفلل العائلية/69e0b988ad0778e2fae9d95d_Header.jpg"
-                alt="الواجهة الرئيسية — كام الفلل العائلية"
+                alt="كام الفلل العائلية — الواجهة المعمارية الرئيسية"
                 class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-primary/95 via-transparent to-transparent flex items-end p-6 pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-primary/95 via-transparent to-transparent flex items-end p-4 sm:p-5 pointer-events-none">
               <div class="text-right">
-                <span class="text-xs font-bold text-gray-300 uppercase tracking-wider block">التصميم المعماري الخارجي</span>
-                <span class="text-white text-sm font-semibold">كام الفلل العائلية — حي القيروان</span>
+                <span class="text-[10px] sm:text-[11px] font-bold text-gray-300 uppercase tracking-wider block">الواجهة المعمارية الرئيسية</span>
+                <span class="text-white text-xs sm:text-sm font-bold">كام الفلل العائلية — حي القيروان</span>
               </div>
             </div>
           </div>
@@ -279,168 +286,804 @@
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- FULL-WIDTH CINEMATIC VIDEO (من اليمين إلى اليسار كامل)  -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="w-full bg-black overflow-hidden border-b border-surface-border">
+    <div class="w-full relative aspect-[16/9] sm:aspect-[21/9] max-h-[75vh]">
+      <video autoplay loop muted playsinline
+             poster="./صور المشاريع/كام الفلل العائلية/69e0b988ad0778e2fae9d95d_Header.jpg"
+             class="w-full h-full object-cover">
+        <source src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/6a6856fbf454fee2ee37648a_6a6af2ad3db17a6091e3b791_Family Villas Website Header Video_mp4.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
 
   <!-- ══════════════════════════════════════════════════════ -->
-  <!-- VISUAL GALLERY (#gallery)                              -->
+  <!-- PURE PHOTO SCROLL ROLLING (حبه حبه بالسكرول بدون أي ضغط) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="plans" class="py-12 sm:py-20 lg:py-28 bg-surface-light border-b border-surface-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-right">
+      
+      <!-- Section Header -->
+      <div class="mb-8 sm:mb-12 text-right">
+        <div class="w-10 h-px bg-stone-muted mb-3 sm:mb-5"></div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-primary tracking-tight font-display mb-2 sm:mb-3">
+          النماذج السكنية واستعراض الفضاءات بالسكرول المستمر
+        </h2>
+        <p class="text-gray-600 max-w-2xl text-xs sm:text-sm lg:text-base leading-relaxed font-normal">
+          مرر للأسفل لتستكشف صور ومساحات الفلل والشقق حبة حبة بسلاسة تامة وبدون الحاجة لأي نقر. تتزامن شاشة العرض تلقائياً مع كل فضاء أثناء التمرير.
+        </p>
+      </div>
+
+      <!-- Quick Model Navigation Anchor Bar (Sticky Pills) -->
+      <div class="mb-8 sm:mb-12 pb-3 border-b border-surface-border sticky top-16 sm:top-20 z-30 bg-surface-light/95 backdrop-blur-md -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 flex-nowrap sm:flex-wrap">
+          <span class="text-xs font-bold text-gray-500 whitespace-nowrap hidden sm:inline ml-1">الانتقال السريع للنماذج:</span>
+          
+          <button type="button" onclick="scrollToPhotoStop('stop-model-street')" id="nav-btn-street"
+                  class="model-nav-btn active px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-sm transition-all cursor-pointer ring-2 ring-stone-muted/60 bg-slate-primary text-white font-bold shadow-md whitespace-nowrap flex-shrink-0">
+            الفلل المطلة على الشارع الرئيسي (349 م²)
+          </button>
+          
+          <button type="button" onclick="scrollToPhotoStop('stop-model-garden')" id="nav-btn-garden"
+                  class="model-nav-btn px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-sm transition-all cursor-pointer bg-white border border-surface-border text-gray-700 hover:border-slate-primary hover:text-slate-primary font-medium whitespace-nowrap flex-shrink-0">
+            الفلل المطلة على الحديقة (380 م²)
+          </button>
+          
+          <button type="button" onclick="scrollToPhotoStop('stop-model-simplex')" id="nav-btn-simplex"
+                  class="model-nav-btn px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-sm transition-all cursor-pointer bg-white border border-surface-border text-gray-700 hover:border-slate-primary hover:text-slate-primary font-medium whitespace-nowrap flex-shrink-0">
+            سيمبلكس الشقق العائلية (223 م²)
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Sticky Split Scroll Viewport Grid (12 Columns) -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start relative w-full">
+        
+        <!-- ══════════════════════════════════════════════════════ -->
+        <!-- RIGHT COLUMN (يمين - 45%): SCROLLABLE PHOTO STOPS (حبه حبه) -->
+        <!-- ══════════════════════════════════════════════════════ -->
+        <div class="md:col-span-6 lg:col-span-5 order-2 md:order-1 space-y-12 sm:space-y-16 divide-y divide-surface-border text-right">
+          
+          <!-- ════════════════════════════════════════════════════ -->
+          <!-- 1. نموذج الفلل المطلة على الشارع الرئيسي             -->
+          <!-- ════════════════════════════════════════════════════ -->
+          <div id="stop-model-street" class="pt-2 first:pt-0">
+            
+            <!-- Model Header & Specifications Summary -->
+            <div class="bg-surface-card border border-surface-border rounded-sm p-4 sm:p-5 mb-8">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-mono font-bold text-gray-500 uppercase tracking-wider">نموذج 01 / 03</span>
+                <span class="text-gray-300">•</span>
+                <span class="text-xs font-bold text-slate-primary bg-white px-2.5 py-0.5 rounded-sm border border-surface-border">4 فلل فاخرة</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-primary font-display mb-2">
+                الفلل المطلة على الشارع الرئيسي (349 م²)
+              </h3>
+              <p class="text-xs sm:text-sm text-stone-muted font-medium mb-4">
+                مساحات رحبة وإطلالة مباشرة على الشارع مع 3 نقاط دخول وخصوصية استثنائية
+              </p>
+              
+              <!-- Clean Verified Bullet Points -->
+              <span class="text-xs font-bold text-slate-primary block mb-2 pb-1.5 border-b border-surface-border/60">
+                المواصفات والمساحات المعتمدة:
+              </span>
+              <ul class="space-y-1.5 text-xs text-gray-700 list-disc list-inside leading-relaxed mb-3">
+                <li>4 فلل فاخرة بمساحات رحبة تصل إلى 349 متر مربع.</li>
+                <li>5 غرف نوم مصممة بمساحات واسعة وإضاءة طبيعية ممتدة.</li>
+                <li>3 نقاط دخول ومداخل مستقلة تسمح بالوصول والخصوصية التامة.</li>
+                <li>مجلس ضيوف مخصص ومنفصل تماماً عن خصوصية العائلة.</li>
+                <li>مسبح خاص، جلسات خارجية مظللة، ومصعد خاص يخدم كافة الطوابق.</li>
+                <li>موقف سيارات مخصص ومغطى في الدور الأرضي.</li>
+              </ul>
+              <div class="text-[10px] font-mono text-stone-muted">
+                MODEL 01 • 349 SQM • 4 LUXURY STREET-FACING VILLAS
+              </div>
+            </div>
+
+            <!-- Sequential Photo Stops for Street Model (حبه حبه بالسكرول) -->
+            <div class="space-y-8 sm:space-y-10 pr-2 border-r-2 border-stone-muted/30">
+              
+              <!-- Stop 1.1: المجلس -->
+              <div class="photo-stop is-active p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="street"
+                   data-model-name="الفلل المطلة على الشارع الرئيسي"
+                   data-space-title="مجلس الضيوف المستقل"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/المجلس.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">01. مجلس الضيوف المستقل</span>
+                  <span class="text-[11px] font-mono text-stone-muted">MAJLIS</span>
+                </div>
+                <!-- Mobile only image inline -->
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/المجلس.jpg" alt="المجلس" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  مجلس ضيوف فاخر ومستقل تماماً عن خصوصية العائلة يجسد كرم الضيافة النجدية بتشطيبات رخامية وأسقف مرتفعة.
+                </p>
+              </div>
+
+              <!-- Stop 1.2: صالة المعيشة -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="street"
+                   data-model-name="الفلل المطلة على الشارع الرئيسي"
+                   data-space-title="صالة المعيشة العائلية"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/صالة المعيشة.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">02. صالة المعيشة العائلية</span>
+                  <span class="text-[11px] font-mono text-stone-muted">LIVING ROOM</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/صالة المعيشة.jpg" alt="صالة المعيشة" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  فضاء عائلي رحب بانفتاح زجاجي كامل يسمح بدخول الإضاءة الطبيعية طوال اليوم مع إطلالة على الفناء الخاص.
+                </p>
+              </div>
+
+              <!-- Stop 1.3: تناول الطعام -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="street"
+                   data-model-name="الفلل المطلة على الشارع الرئيسي"
+                   data-space-title="منطقة تناول الطعام"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/منطقة تناول الطعام.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">03. منطقة تناول الطعام</span>
+                  <span class="text-[11px] font-mono text-stone-muted">DINING AREA</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/منطقة تناول الطعام.jpg" alt="منطقة تناول الطعام" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  تصميم متناغم يربط صالة المعيشة والمطبخ بمساحة طعام عملية وأنيقة تتسع لكافة المناسبات العائلية.
+                </p>
+              </div>
+
+              <!-- Stop 1.4: المطبخ -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="street"
+                   data-model-name="الفلل المطلة على الشارع الرئيسي"
+                   data-space-title="المطبخ بتصميم حديث وعملي"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/المطبخ.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">04. المطبخ المودرن</span>
+                  <span class="text-[11px] font-mono text-stone-muted">KITCHEN</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/المطبخ.jpg" alt="المطبخ" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  خزائن وأسطح مدمجة من أجود الخامات مع منطقة تحضير ذكية ومستودع مخفي للحفاظ على هدوء ونظافة المساحة.
+                </p>
+              </div>
+
+              <!-- Stop 1.5: غرف النوم -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="street"
+                   data-model-name="الفلل المطلة على الشارع الرئيسي"
+                   data-space-title="أجنحة غرف النوم الفاخرة"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/غرف النوم.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">05. أجنحة النوم</span>
+                  <span class="text-[11px] font-mono text-stone-muted">BEDROOM SUITES</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/غرف النوم.jpg" alt="غرف النوم" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  5 غرف نوم مصممة بمساحات واسعة وإضاءة طبيعية ممتدة، تتصل بخزائن ملابس مخصصة وحمامات خاصة.
+                </p>
+              </div>
+
+              <!-- Stop 1.6: مسبح خاص -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="street"
+                   data-model-name="الفلل المطلة على الشارع الرئيسي"
+                   data-space-title="المسبح الخاص والجلسات المظللة"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/مسبح خاص.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">06. المسبح الخاص</span>
+                  <span class="text-[11px] font-mono text-stone-muted">PRIVATE POOL</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/مسبح خاص.jpg" alt="المسبح الخاص" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  مسبح خاص يوفر استرخاءً تاماً وسط أجواء مظللة بخصوصية مطلقة لجميع أفراد الأسرة.
+                </p>
+              </div>
+
+              <!-- Stop 1.7: شرفة السطح -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="street"
+                   data-model-name="الفلل المطلة على الشارع الرئيسي"
+                   data-space-title="شرفة السطح العلوي"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/شرفة السطح العلوي.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">07. شرفة السطح العلوي</span>
+                  <span class="text-[11px] font-mono text-stone-muted">ROOFTOP TERRACE</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/شرفة السطح العلوي.jpg" alt="شرفة السطح العلوي" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  شرفة سطح بانورامية مهيأة بجلسات خارجية تناسب كافة فصول السنة للاستمتاع بأجواء المساء في شمال الرياض.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- ════════════════════════════════════════════════════ -->
+          <!-- 2. نموذج الفلل المطلة على الحديقة                   -->
+          <!-- ════════════════════════════════════════════════════ -->
+          <div id="stop-model-garden" class="pt-10">
+            
+            <!-- Model Header & Specifications Summary -->
+            <div class="bg-surface-card border border-surface-border rounded-sm p-4 sm:p-5 mb-8">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-mono font-bold text-gray-500 uppercase tracking-wider">نموذج 02 / 03</span>
+                <span class="text-gray-300">•</span>
+                <span class="text-xs font-bold text-slate-primary bg-white px-2.5 py-0.5 rounded-sm border border-surface-border">4 فلل فاخرة</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-primary font-display mb-2">
+                الفلل المطلة على الحديقة (380 م²)
+              </h3>
+              <p class="text-xs sm:text-sm text-stone-muted font-medium mb-4">
+                انفتاح كامل وإطلالة مباشرة على حدائق المجمع الخضراء والأفنية الظليلة
+              </p>
+              
+              <!-- Clean Verified Bullet Points -->
+              <span class="text-xs font-bold text-slate-primary block mb-2 pb-1.5 border-b border-surface-border/60">
+                المواصفات والمساحات المعتمدة:
+              </span>
+              <ul class="space-y-1.5 text-xs text-gray-700 list-disc list-inside leading-relaxed mb-3">
+                <li>4 فلل فاخرة بمساحات رحبة تصل إلى 380 متر مربع.</li>
+                <li>4 غرف نوم كأجنحة نوم رئيسية متكاملة الخزائن والخدمات.</li>
+                <li>إطلالة مباشرة وانفتاح كامل على حدائق المجمع الخضراء والأفنية الظليلة.</li>
+                <li>مجلس ضيافة راقٍ ومستقل عن أجنحة المعيشة.</li>
+                <li>مسبح خاص، مصعد خاص، وجلسات خارجية بانورامية.</li>
+                <li>موقف سيارات مخصص في المستوى الأرضي.</li>
+              </ul>
+              <div class="text-[10px] font-mono text-stone-muted">
+                MODEL 02 • 380 SQM • 4 LUXURY GARDEN-FACING VILLAS
+              </div>
+            </div>
+
+            <!-- Sequential Photo Stops for Garden Model (حبه حبه بالسكرول) -->
+            <div class="space-y-8 sm:space-y-10 pr-2 border-r-2 border-stone-muted/30">
+              
+              <!-- Stop 2.1: المجلس -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="garden"
+                   data-model-name="الفلل المطلة على الحديقة"
+                   data-space-title="مجلس الضيافة وإطلالة الحديقة"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/المجلس.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">01. مجلس الضيافة الراقي</span>
+                  <span class="text-[11px] font-mono text-stone-muted">MAJLIS</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/المجلس.jpg" alt="المجلس" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  مجلس ضيافة أنيق ومستقل يتميز بإطلالة خضراء آسرة على حدائق المجمع الخاصة.
+                </p>
+              </div>
+
+              <!-- Stop 2.2: صالة المعيشة -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="garden"
+                   data-model-name="الفلل المطلة على الحديقة"
+                   data-space-title="صالة المعيشة المطلة على الأفنية"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/صالة المعيشة.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">02. صالة المعيشة</span>
+                  <span class="text-[11px] font-mono text-stone-muted">GARDEN LIVING</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/صالة المعيشة.jpg" alt="صالة المعيشة" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  صالة معيشة مفتوحة تتصل بسلاسة مع التراسات والأفنية الخارجية لتوفير امتداد بصري مريح للأعصاب.
+                </p>
+              </div>
+
+              <!-- Stop 2.3: المطبخ -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="garden"
+                   data-model-name="الفلل المطلة على الحديقة"
+                   data-space-title="المطبخ المفتوح الحديث"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/المطبخ.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">03. المطبخ المفتوح</span>
+                  <span class="text-[11px] font-mono text-stone-muted">OPEN KITCHEN</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/المطبخ.jpg" alt="المطبخ" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  مطبخ مفتوح يحتل مكانه كمركز اجتماعي للمنزل مع تجهيزات عالمية مدمجة.
+                </p>
+              </div>
+
+              <!-- Stop 2.4: غرف النوم -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="garden"
+                   data-model-name="الفلل المطلة على الحديقة"
+                   data-space-title="أجنحة النوم الرئيسية"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/غرف النوم.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">04. أجنحة النوم</span>
+                  <span class="text-[11px] font-mono text-stone-muted">MASTER SUITES</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/غرف النوم.jpg" alt="غرف النوم" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  4 أجنحة نوم رئيسية متكاملة الخزائن مع حمامات رخامية فاخرة وعزل صوتي فائق.
+                </p>
+              </div>
+
+              <!-- Stop 2.5: مسبح خاص -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="garden"
+                   data-model-name="الفلل المطلة على الحديقة"
+                   data-space-title="المسبح الخاص وإطلالة الحديقة"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/مسبح خاص.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">05. مسبح الحديقة</span>
+                  <span class="text-[11px] font-mono text-stone-muted">POOL &amp; GARDEN</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/مسبح خاص.jpg" alt="مسبح خاص" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  مسبح خاص محاط بالمساحات النباتية وجلسات استرخاء خارجية بانورامية.
+                </p>
+              </div>
+
+              <!-- Stop 2.6: شرفة السطح -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="garden"
+                   data-model-name="الفلل المطلة على الحديقة"
+                   data-space-title="شرفة السطح البانورامية"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/شرفة السطح العلوي.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">06. شرفة السطح</span>
+                  <span class="text-[11px] font-mono text-stone-muted">ROOF LOUNGE</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/شرفة السطح العلوي.jpg" alt="شرفة السطح" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  إطلالة مرتفعة على المجمع السكني مع جلسات مفتوحة على السماء.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- ════════════════════════════════════════════════════ -->
+          <!-- 3. نموذج سيمبلكس الشقق العائلية                     -->
+          <!-- ════════════════════════════════════════════════════ -->
+          <div id="stop-model-simplex" class="pt-10">
+            
+            <!-- Model Header & Specifications Summary -->
+            <div class="bg-surface-card border border-surface-border rounded-sm p-4 sm:p-5 mb-8">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-mono font-bold text-gray-500 uppercase tracking-wider">نموذج 03 / 03</span>
+                <span class="text-gray-300">•</span>
+                <span class="text-xs font-bold text-slate-primary bg-white px-2.5 py-0.5 rounded-sm border border-surface-border">12 مسكناً عائلياً</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-primary font-display mb-2">
+                سيمبلكس الشقق العائلية (223 م²)
+              </h3>
+              <p class="text-xs sm:text-sm text-stone-muted font-medium mb-4">
+                أدوار سيمبلكس مستقلة في قلب المجمع مع شرفة سطح علوية وجلسات خارجية
+              </p>
+              
+              <!-- Clean Verified Bullet Points -->
+              <span class="text-xs font-bold text-slate-primary block mb-2 pb-1.5 border-b border-surface-border/60">
+                المواصفات والمساحات المعتمدة:
+              </span>
+              <ul class="space-y-1.5 text-xs text-gray-700 list-disc list-inside leading-relaxed mb-3">
+                <li>12 مسكناً عائلياً (أدوار سيمبلكس مستقلة) تقع في قلب المجمع السكني.</li>
+                <li>مساحات معيشية مدروسة وموزعة بعناية تصل إلى 223 متر مربع.</li>
+                <li>توزيع مرن يضم من 3 إلى 4 غرف نوم في كل طابق.</li>
+                <li>مصعد خاص يخدم الساكن ومواقف سيارات مخصصة في المستوى الأرضي.</li>
+                <li>شرفة سطح علوية وجلسات خارجية تناسب كافة فصول السنة.</li>
+              </ul>
+              <div class="text-[10px] font-mono text-stone-muted">
+                MODEL 03 • 223 SQM • 12 INDEPENDENT SIMPLEX RESIDENCES
+              </div>
+            </div>
+
+            <!-- Sequential Photo Stops for Simplex Model (حبه حبه بالسكرول) -->
+            <div class="space-y-8 sm:space-y-10 pr-2 border-r-2 border-stone-muted/30">
+              
+              <!-- Stop 3.1: المجلس -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="simplex"
+                   data-model-name="سيمبلكس الشقق العائلية"
+                   data-space-title="المجلس العائلي المستقل"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/المجلس.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">01. المجلس العائلي</span>
+                  <span class="text-[11px] font-mono text-stone-muted">MAJLIS</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/المجلس.jpg" alt="المجلس" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  مجلس عائلي مستقل بتصميم عصري يراعي الخصوصية وتوزيع المساحة الذكي.
+                </p>
+              </div>
+
+              <!-- Stop 3.2: صالة المعيشة -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="simplex"
+                   data-model-name="سيمبلكس الشقق العائلية"
+                   data-space-title="صالة المعيشة الواسعة"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/صالة المعيشة.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">02. صالة المعيشة</span>
+                  <span class="text-[11px] font-mono text-stone-muted">FAMILY LIVING</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/صالة المعيشة.jpg" alt="صالة المعيشة" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  مساحة معيشية مدروسة وموزعة بعناية تصل إلى 223 متر مربع في أدوار سيمبلكس مستقلة.
+                </p>
+              </div>
+
+              <!-- Stop 3.3: تناول الطعام والمطبخ -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="simplex"
+                   data-model-name="سيمبلكس الشقق العائلية"
+                   data-space-title="منطقة تناول الطعام والمطبخ"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/منطقة تناول الطعام.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">03. منطقة الطعام والمطبخ</span>
+                  <span class="text-[11px] font-mono text-stone-muted">DINING &amp; KITCHEN</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/منطقة تناول الطعام.jpg" alt="منطقة تناول الطعام" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  بيئة طعام ومطبخ مودرن تتكامل بسلاسة لخدمة العائلة بكل يسر وراحة.
+                </p>
+              </div>
+
+              <!-- Stop 3.4: غرف النوم -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="simplex"
+                   data-model-name="سيمبلكس الشقق العائلية"
+                   data-space-title="أجنحة غرف النوم"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/غرف النوم.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">04. غرف النوم المستقلة</span>
+                  <span class="text-[11px] font-mono text-stone-muted">BEDROOMS</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/غرف النوم.jpg" alt="غرف النوم" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  توزيع مرن يضم من 3 إلى 4 غرف نوم في كل طابق مع مصعد خاص يخدم الساكن.
+                </p>
+              </div>
+
+              <!-- Stop 3.5: شرفة السطح -->
+              <div class="photo-stop p-4 bg-white border border-surface-border rounded-sm shadow-2xs text-right"
+                   data-model-group="simplex"
+                   data-model-name="سيمبلكس الشقق العائلية"
+                   data-space-title="شرفة السطح الخارجية"
+                   data-photo-src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/شرفة السطح العلوي.jpg">
+                <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2">
+                  <span class="text-xs font-bold text-slate-primary">05. شرفة السطح العلوية</span>
+                  <span class="text-[11px] font-mono text-stone-muted">OUTDOOR TERRACE</span>
+                </div>
+                <div class="block md:hidden aspect-[16/10] overflow-hidden rounded-sm mb-3 cursor-pointer group shadow-sm hover:shadow-md transition-all" onclick="openPhotoStopFromElement(this)">
+                  <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/شرفة السطح العلوي.jpg" alt="شرفة السطح" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  شرفة سطح علوية وجلسات خارجية مستقلة تتيح الاستمتاع بالهواء الطلق.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════ -->
+        <!-- LEFT COLUMN (يسار - 55%): STICKY PHOTO VIEWPORT (DESKTOP) -->
+        <!-- ══════════════════════════════════════════════════════ -->
+        <div id="sticky-viewport-col" class="hidden md:block md:col-span-6 lg:col-span-7 order-1 md:order-2 sticky top-20 sm:top-24 lg:top-28 z-20 w-full">
+          <div class="bg-white/95 backdrop-blur-md border border-surface-border rounded-sm shadow-md p-4 sm:p-5 lg:h-[80vh] flex flex-col justify-between overflow-hidden text-right">
+            
+            <!-- Canvas Top Header -->
+            <div class="flex items-center justify-between pb-3 border-b border-surface-border">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-stone-accent animate-pulse"></span>
+                <span id="sticky-photo-model-tag" class="text-xs sm:text-sm font-bold text-slate-primary">الفلل المطلة على الشارع الرئيسي</span>
+                <span class="text-gray-300">•</span>
+                <span id="sticky-photo-badge-tag" class="text-xs text-stone-muted font-medium">مجلس الضيوف المستقل</span>
+              </div>
+              
+              <!-- Lightbox Zoom Button -->
+              <button type="button" onclick="openCurrentStickyPhotoLightbox()" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-primary hover:text-stone-accent bg-surface-card hover:bg-gray-200 border border-surface-border px-3 py-1.5 rounded-sm transition-colors cursor-pointer" title="تكبير الصورة بملء الشاشة">
+                <span>تكبير الصورة</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7"/></svg>
+              </button>
+            </div>
+
+            <!-- Canvas Image Frame: Dynamic High-Res Photo Viewport (يتغير تلقائياً بالسكرول حبه حبه) -->
+            <div class="relative flex-1 flex items-center justify-center my-3 overflow-hidden bg-slate-primary rounded-sm border border-surface-border/60 min-h-[300px] sm:min-h-[380px] lg:min-h-[460px] cursor-pointer group"
+                 onclick="openCurrentStickyPhotoLightbox()">
+              
+              <img id="sticky-space-img"
+                   src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/المجلس.jpg"
+                   alt="استعراض فضاءات كام الفلل العائلية"
+                   class="w-full h-full object-cover transition-all duration-300 opacity-100 group-hover:scale-[1.02]" />
+
+              <div class="absolute bottom-3 left-3 bg-slate-primary/90 text-white text-[11px] px-3 py-1 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none flex items-center gap-1.5 shadow-md">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                <span>انقر للتكبير بملء الشاشة</span>
+              </div>
+            </div>
+
+            <!-- Canvas Bottom Bar: Space Caption & Attribution -->
+            <div class="pt-3 border-t border-surface-border flex items-center justify-between text-xs text-gray-500">
+              <span id="sticky-photo-caption" class="text-xs text-slate-primary font-semibold">مجلس الضيوف المستقل — الفلل المطلة على الشارع الرئيسي</span>
+              <span class="text-[11px] text-stone-muted font-medium">كام الفلل العائلية — حي القيروان</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- DEDICATED ARCHITECTURAL CAD BLUEPRINT (المخطط المعماري بعد الصور) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="blueprint" class="py-16 sm:py-24 bg-white border-b border-surface-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-right">
+      
+      <!-- Section Header -->
+      <div class="mb-10 sm:mb-12 text-right">
+        <div class="w-10 h-px bg-stone-muted mb-4"></div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-primary tracking-tight font-display mb-2">
+              المخطط المعماري الهندسي المعتمد (CAD Blueprint)
+            </h2>
+            <p class="text-gray-600 max-w-2xl text-xs sm:text-sm lg:text-base leading-relaxed font-normal">
+              المسقط الأفقي المعتمد لكافة النماذج السكنية موضحاً المداخل، نقاط الوصول، توزيع الغرف، والمرافق الخاصة.
+            </p>
+          </div>
+          
+          <button type="button" onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/تطوير الموقع/المخطط المعماري.jpg', 'المخطط المعماري المعتمد — كام الفلل العائلية')"
+                  class="inline-flex items-center gap-2 bg-slate-primary hover:bg-slate-deep text-white px-4 py-2.5 rounded-sm text-xs sm:text-sm font-bold transition-colors cursor-pointer w-fit shadow-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7"/></svg>
+            <span>تكبير المخطط بملء الشاشة</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Architectural Blueprint Card -->
+      <div class="bg-surface-light border border-surface-border rounded-sm p-4 sm:p-6 lg:p-8 shadow-xs">
+        
+        <div class="relative aspect-[16/9] lg:aspect-[21/9] bg-white rounded-sm overflow-hidden flex items-center justify-center p-3 sm:p-6 cursor-pointer group border border-surface-border/60"
+             onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/تطوير الموقع/المخطط المعماري.jpg', 'المخطط المعماري المعتمد — كام الفلل العائلية')">
+          <img src="./صور المشاريع/كام الفلل العائلية/تطوير الموقع/المخطط المعماري.jpg"
+               alt="المخطط المعماري المعتمد — كام الفلل العائلية"
+               class="max-h-full max-w-full object-contain mx-auto transition-transform duration-500 group-hover:scale-105" />
+          <div class="absolute bottom-3 left-3 bg-slate-primary/90 text-white text-xs px-3 py-1.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 pointer-events-none shadow-md">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <span>انقر لتكبير المخطط الهندسي</span>
+          </div>
+        </div>
+
+        <!-- Metric Badges & Attribution -->
+        <div class="mt-6 pt-4 border-t border-surface-border flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-3 py-1 rounded-xs bg-white border border-surface-border font-bold text-slate-primary">20 مسكناً فاخراً</span>
+            <span class="px-3 py-1 rounded-xs bg-white border border-surface-border font-bold text-slate-primary">3 نماذج معمارية مدروسة</span>
+            <span class="px-3 py-1 rounded-xs bg-white border border-surface-border font-bold text-slate-primary">مسابح خاصة ومصاعد مستقلة</span>
+            <span class="px-3 py-1 rounded-xs bg-white border border-surface-border font-bold text-slate-primary">مجالس ضيافة منفصلة</span>
+          </div>
+          <span class="font-mono text-[11px] text-stone-muted font-medium">AUTOCAD / REVIT • OFFICIAL CAD BLUEPRINT — شركة كام العقارية</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- LUXURY INTERIOR ARCHITECTURE & CRAFTSMANSHIP (#interiors) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="interiors" class="py-16 sm:py-24 bg-surface-light border-b border-surface-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-right">
+      
+      <!-- Section Header -->
+      <div class="mb-12 sm:mb-16 text-right">
+        <div class="w-10 h-px bg-stone-muted mb-4"></div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-primary tracking-tight font-display mb-3">
+          تصاميم داخلية تحتضنك — أصالة الحرفة وتناغم التفاصيل
+        </h2>
+        <p class="text-gray-600 max-w-3xl text-sm sm:text-base leading-relaxed font-normal">
+          تتناغم الأسطح الداخلية مع انضباط الواجهات الخارجية؛ حيث جرى اختيار الخامات بعناية لتجسيد الفخامة والسكينة.
+        </p>
+      </div>
+
+      <!-- 4 Editorial Feature Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="bg-white border border-surface-border rounded-sm p-5 sm:p-6 text-right hover:border-stone-muted/60 transition-colors shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-sm bg-surface-light border border-surface-border flex items-center justify-center mb-4 text-stone-muted">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+            </div>
+            <span class="text-xs font-mono font-bold text-stone-muted uppercase tracking-wider block mb-1">خامات طبيعية فاخرة</span>
+            <h3 class="text-lg font-bold text-slate-primary mb-2.5">
+              مجموعة ألوان وخامات راقية
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              جدران بملمس الشامواه المخملي، أرضيات خشب البلوط بنمط الهيكل العظمي (Herringbone)، أسطح حجر الترافرتين الفاخر، وتفاصيل نحاس مصقول وقشرة بلوط طبيعية.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-surface-border/60 text-[11px] font-mono text-gray-400">
+            NATURAL OAK &amp; TRAVERTINE
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white border border-surface-border rounded-sm p-5 sm:p-6 text-right hover:border-stone-muted/60 transition-colors shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-sm bg-surface-light border border-surface-border flex items-center justify-center mb-4 text-stone-muted">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            </div>
+            <span class="text-xs font-mono font-bold text-stone-muted uppercase tracking-wider block mb-1">المركز الاجتماعي للمنزل</span>
+            <h3 class="text-lg font-bold text-slate-primary mb-2.5">
+              مطبخ مفتوح بتصميم عملي وهادئ
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              مطبخ مفتوح يحتل مكانه كمركز اجتماعي للمنزل، مدمج مع منطقة تحضير ومستودع مخفي يحافظ على هدوء ونظافة المساحة.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-surface-border/60 text-[11px] font-mono text-gray-400">
+            OPEN CONCEPT SOCIAL KITCHEN
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white border border-surface-border rounded-sm p-5 sm:p-6 text-right hover:border-stone-muted/60 transition-colors shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-sm bg-surface-light border border-surface-border flex items-center justify-center mb-4 text-stone-muted">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <span class="text-xs font-mono font-bold text-stone-muted uppercase tracking-wider block mb-1">خصوصية وراحة تامة</span>
+            <h3 class="text-lg font-bold text-slate-primary mb-2.5">
+              كل غرفة نوم، ملاذها الخاص
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              تفتح غرف النوم في الطوابق العلوية على مساحات خزانة مخصصة (Walk-in Closets)، وتتصل بشكل طبيعي بحمامات خاصة مصممة بأرقى الأدوات الصحية العالمية.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-surface-border/60 text-[11px] font-mono text-gray-400">
+            PRIVATE BEDROOM SUITES
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white border border-surface-border rounded-sm p-5 sm:p-6 text-right hover:border-stone-muted/60 transition-colors shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-sm bg-surface-light border border-surface-border flex items-center justify-center mb-4 text-stone-muted">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+            </div>
+            <span class="text-xs font-mono font-bold text-stone-muted uppercase tracking-wider block mb-1">العيش وفق شروطك</span>
+            <h3 class="text-lg font-bold text-slate-primary mb-2.5">
+              قبو وتخصيص مرن
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              قبو متعدد الاستخدامات قابل للتعديل كمستودع خاص، صالة سينما، نادٍ رياضي، أو أجنحة للعاملين وسائقي المنزل.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-surface-border/60 text-[11px] font-mono text-gray-400">
+            FLEXIBLE BASEMENT LIVING
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- ARCHITECTURAL VISUAL GALLERY (#gallery)               -->
   <!-- ══════════════════════════════════════════════════════ -->
   <section id="gallery" class="py-16 sm:py-24 bg-white border-b border-surface-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-right">
       
-      <div class="max-w-3xl mb-12 sm:mb-14 text-right">
-        <div class="w-10 h-px bg-stone-muted mb-4 sm:mb-6"></div>
-        <h3 class="text-2xl sm:text-3xl font-bold text-slate-primary tracking-tight font-display mb-3">
+      <!-- Section Header -->
+      <div class="mb-10 sm:mb-12 text-right">
+        <div class="w-10 h-px bg-stone-muted mb-4"></div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-primary tracking-tight font-display mb-3">
           معرض الصور واللقطات المعمارية
-        </h3>
-        <p class="text-sm sm:text-base text-gray-600 font-normal">
-          التوثيق البصري للقطات التصميم المعماري لمشروع كام الفلل العائلية. انقر على أي صورة لمعاينتها بالحجم الكامل.
+        </h2>
+        <p class="text-gray-600 max-w-2xl text-sm sm:text-base leading-relaxed font-normal">
+          لقطات معمارية حصرية تعكس الجودة الاستثنائية والخصوصية الفائقة في كام الفلل العائلية.
         </p>
       </div>
 
-      <!-- Pure Architectural Image Grid (No Text Cards) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <!-- Pure Image-Only Masonry / Grid Layout -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
         
-        <!-- Render 1 -->
-        <div class="group relative overflow-hidden rounded-sm border border-surface-border bg-slate-primary/5 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 aspect-[16/11]"
+        <div class="relative aspect-[4/3] rounded-sm overflow-hidden bg-slate-deep border border-surface-border cursor-pointer group"
              onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/6a2ea4131ad72d3a0d3f4095_1.jpg', 'لقطة معمارية 1 — كام الفلل العائلية')">
-          <img
-            src="./صور المشاريع/كام الفلل العائلية/6a2ea4131ad72d3a0d3f4095_1.jpg"
-            alt="لقطة معمارية 1 — كام الفلل العائلية"
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-slate-primary/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="p-3 bg-white/95 text-slate-primary rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-            </span>
-          </div>
+          <img src="./صور المشاريع/كام الفلل العائلية/6a2ea4131ad72d3a0d3f4095_1.jpg"
+               alt="لقطة معمارية 1"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         </div>
 
-        <!-- Render 2 -->
-        <div class="group relative overflow-hidden rounded-sm border border-surface-border bg-slate-primary/5 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 aspect-[16/11]"
+        <div class="relative aspect-[4/3] rounded-sm overflow-hidden bg-slate-deep border border-surface-border cursor-pointer group"
              onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/6a2ea4132243172b56a35db6_2.jpg', 'لقطة معمارية 2 — كام الفلل العائلية')">
-          <img
-            src="./صور المشاريع/كام الفلل العائلية/6a2ea4132243172b56a35db6_2.jpg"
-            alt="لقطة معمارية 2 — كام الفلل العائلية"
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-slate-primary/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="p-3 bg-white/95 text-slate-primary rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-            </span>
-          </div>
+          <img src="./صور المشاريع/كام الفلل العائلية/6a2ea4132243172b56a35db6_2.jpg"
+               alt="لقطة معمارية 2"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         </div>
 
-        <!-- Render 3 -->
-        <div class="group relative overflow-hidden rounded-sm border border-surface-border bg-slate-primary/5 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 aspect-[16/11]"
+        <div class="relative aspect-[4/3] rounded-sm overflow-hidden bg-slate-deep border border-surface-border cursor-pointer group"
              onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/6a2ea4132243172b56a35dcf_3.jpg', 'لقطة معمارية 3 — كام الفلل العائلية')">
-          <img
-            src="./صور المشاريع/كام الفلل العائلية/6a2ea4132243172b56a35dcf_3.jpg"
-            alt="لقطة معمارية 3 — كام الفلل العائلية"
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-slate-primary/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="p-3 bg-white/95 text-slate-primary rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-            </span>
-          </div>
+          <img src="./صور المشاريع/كام الفلل العائلية/6a2ea4132243172b56a35dcf_3.jpg"
+               alt="لقطة معمارية 3"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         </div>
 
-        <!-- Render 4 -->
-        <div class="group relative overflow-hidden rounded-sm border border-surface-border bg-slate-primary/5 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 aspect-[16/11]"
+        <div class="relative aspect-[4/3] rounded-sm overflow-hidden bg-slate-deep border border-surface-border cursor-pointer group"
              onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/6a2ea413298f7a56a1d6ef46_4.jpg', 'لقطة معمارية 4 — كام الفلل العائلية')">
-          <img
-            src="./صور المشاريع/كام الفلل العائلية/6a2ea413298f7a56a1d6ef46_4.jpg"
-            alt="لقطة معمارية 4 — كام الفلل العائلية"
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-slate-primary/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="p-3 bg-white/95 text-slate-primary rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-            </span>
-          </div>
+          <img src="./صور المشاريع/كام الفلل العائلية/6a2ea413298f7a56a1d6ef46_4.jpg"
+               alt="لقطة معمارية 4"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         </div>
 
-        <!-- Render 5 -->
-        <div class="group relative overflow-hidden rounded-sm border border-surface-border bg-slate-primary/5 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 aspect-[16/11]"
+        <div class="relative aspect-[4/3] rounded-sm overflow-hidden bg-slate-deep border border-surface-border cursor-pointer group"
              onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/6a2ea4121cdaa9b9e0314c9d_5.jpg', 'لقطة معمارية 5 — كام الفلل العائلية')">
-          <img
-            src="./صور المشاريع/كام الفلل العائلية/6a2ea4121cdaa9b9e0314c9d_5.jpg"
-            alt="لقطة معمارية 5 — كام الفلل العائلية"
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-slate-primary/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="p-3 bg-white/95 text-slate-primary rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-            </span>
-          </div>
+          <img src="./صور المشاريع/كام الفلل العائلية/6a2ea4121cdaa9b9e0314c9d_5.jpg"
+               alt="لقطة معمارية 5"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         </div>
 
-        <!-- Render 6 -->
-        <div class="group relative overflow-hidden rounded-sm border border-surface-border bg-slate-primary/5 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 aspect-[16/11]"
+        <div class="relative aspect-[4/3] rounded-sm overflow-hidden bg-slate-deep border border-surface-border cursor-pointer group"
              onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/6a2ea412c4421c75c1e5fa30_6.jpg', 'لقطة معمارية 6 — كام الفلل العائلية')">
-          <img
-            src="./صور المشاريع/كام الفلل العائلية/6a2ea412c4421c75c1e5fa30_6.jpg"
-            alt="لقطة معمارية 6 — كام الفلل العائلية"
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-slate-primary/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="p-3 bg-white/95 text-slate-primary rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-            </span>
-          </div>
+          <img src="./صور المشاريع/كام الفلل العائلية/6a2ea412c4421c75c1e5fa30_6.jpg"
+               alt="لقطة معمارية 6"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         </div>
 
-        <!-- Render 7 -->
-        <div class="group relative overflow-hidden rounded-sm border border-surface-border bg-slate-primary/5 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 aspect-[16/11]"
+        <div class="relative aspect-[4/3] rounded-sm overflow-hidden bg-slate-deep border border-surface-border cursor-pointer group"
              onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/6a2ea4129b060f6e0743cbca_7.jpg', 'لقطة معمارية 7 — كام الفلل العائلية')">
-          <img
-            src="./صور المشاريع/كام الفلل العائلية/6a2ea4129b060f6e0743cbca_7.jpg"
-            alt="لقطة معمارية 7 — كام الفلل العائلية"
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-slate-primary/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="p-3 bg-white/95 text-slate-primary rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-            </span>
-          </div>
+          <img src="./صور المشاريع/كام الفلل العائلية/6a2ea4129b060f6e0743cbca_7.jpg"
+               alt="لقطة معمارية 7"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         </div>
 
-        <!-- Render 8 -->
-        <div class="group relative overflow-hidden rounded-sm border border-surface-border bg-slate-primary/5 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 aspect-[16/11]"
+        <div class="relative aspect-[4/3] rounded-sm overflow-hidden bg-slate-deep border border-surface-border cursor-pointer group"
              onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/6a2ea412bb9b73dc03c7c334_8.jpg', 'لقطة معمارية 8 — كام الفلل العائلية')">
-          <img
-            src="./صور المشاريع/كام الفلل العائلية/6a2ea412bb9b73dc03c7c334_8.jpg"
-            alt="لقطة معمارية 8 — كام الفلل العائلية"
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-slate-primary/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="p-3 bg-white/95 text-slate-primary rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-            </span>
-          </div>
-        </div>
-
-        <!-- Render 9 (Header Masterpiece) -->
-        <div class="group relative overflow-hidden rounded-sm border border-surface-border bg-slate-primary/5 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 aspect-[16/11]"
-             onclick="openLightbox('./صور المشاريع/كام الفلل العائلية/69e0b988ad0778e2fae9d95d_Header.jpg', 'الواجهة الرئيسية الشاملة — كام الفلل العائلية')">
-          <img
-            src="./صور المشاريع/كام الفلل العائلية/69e0b988ad0778e2fae9d95d_Header.jpg"
-            alt="الواجهة الرئيسية الشاملة — كام الفلل العائلية"
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-slate-primary/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="p-3 bg-white/95 text-slate-primary rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-            </span>
-          </div>
+          <img src="./صور المشاريع/كام الفلل العائلية/6a2ea412bb9b73dc03c7c334_8.jpg"
+               alt="لقطة معمارية 8"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         </div>
 
       </div>
@@ -448,207 +1091,91 @@
     </div>
   </section>
 
-
   <!-- ══════════════════════════════════════════════════════ -->
-  <!-- KEY METRICS GRID (#metrics)                             -->
+  <!-- STANDARDIZED LEAD CAPTURE FORM (#inquiry)              -->
   <!-- ══════════════════════════════════════════════════════ -->
-  <section id="metrics" class="py-16 sm:py-20 lg:py-24 bg-surface-light border-b border-surface-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="inquiry" class="py-16 sm:py-24 bg-surface-light border-t border-surface-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-right">
       
-      <div class="max-w-3xl mb-12 text-right">
-        <div class="w-10 h-px bg-stone-muted mb-4 sm:mb-6"></div>
-        <h3 class="text-2xl sm:text-3xl font-bold text-slate-primary tracking-tight font-display mb-3">
-          أرقام ومواصفات المشروع
-        </h3>
-        <p class="text-sm sm:text-base text-gray-600 font-normal">
-          نظرة تنفيذية ملخصة لمواصفات وموقع وتكوين مشروع كام الفلل العائلية.
-        </p>
-      </div>
-
-      <!-- Executive Specifications Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- Metric 1: نوع المشروع -->
-        <div class="bg-white border border-surface-border p-6 rounded-sm text-right shadow-xs hover:border-slate-primary/40 transition-colors">
-          <span class="text-xs text-gray-500 font-bold block mb-1">نوع المشروع</span>
-          <span class="text-xl sm:text-2xl font-bold text-slate-primary font-display block">مجمع سكني فاخر</span>
-          <span class="text-xs text-stone-muted mt-2 block">بيئة سكنية راقية متكاملة</span>
-        </div>
-
-        <!-- Metric 2: الموقع -->
-        <div class="bg-white border border-surface-border p-6 rounded-sm text-right shadow-xs hover:border-slate-primary/40 transition-colors">
-          <span class="text-xs text-gray-500 font-bold block mb-1">الموقع</span>
-          <span class="text-xl sm:text-2xl font-bold text-slate-primary font-display block">حي القيروان، الرياض</span>
-          <span class="text-xs text-stone-muted mt-2 block">موقع استراتيجي هادئ ومركزي</span>
-        </div>
-
-        <!-- Metric 3: نماذج الفلل -->
-        <div class="bg-white border border-surface-border p-6 rounded-sm text-right shadow-xs hover:border-slate-primary/40 transition-colors">
-          <span class="text-xs text-gray-500 font-bold block mb-1">نماذج الفلل</span>
-          <span class="text-xl sm:text-2xl font-bold text-slate-primary font-display block">فلل مستقلة (5 غرف نوم)</span>
-          <span class="text-xs text-stone-muted mt-2 block">خصوصية تامة ومساحات رحبة</span>
-        </div>
-
-        <!-- Metric 4: الحالة -->
-        <div class="bg-white border border-surface-border p-6 rounded-sm text-right shadow-xs hover:border-slate-primary/40 transition-colors">
-          <span class="text-xs text-gray-500 font-bold block mb-1">الحالة</span>
-          <span class="text-xl sm:text-2xl font-bold text-slate-primary font-display block">قريباً (طرح مرتقب)</span>
-          <span class="text-xs text-stone-muted mt-2 block">التسجيل المسبق متاح الآن</span>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════════════════ -->
-  <!-- LEAD CAPTURE & INQUIRY SECTION (#inquiry)               -->
-  <!-- ══════════════════════════════════════════════════════ -->
-  <section id="inquiry" class="py-16 sm:py-24 bg-white border-t border-surface-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-right">
-      
-      <div class="max-w-3xl mb-12 sm:mb-16 text-right">
-        <div class="w-10 h-px bg-stone-muted mb-4 sm:mb-6"></div>
-        <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-primary tracking-tight font-display mb-3">
+      <div class="text-center mb-10 sm:mb-12">
+        <div class="w-10 h-px bg-stone-muted mx-auto mb-4"></div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-primary tracking-tight font-display mb-3">
           سجل اهتمامك بمشروع كام الفلل العائلية
-        </h3>
-        <p class="text-sm sm:text-base text-gray-600 font-normal leading-relaxed">
-          سجل بياناتك للتواصل معك من قبل فريق الاستشارات وتزويدك بتفاصيل الفلل والمساحات فور فتح باب الحجز.
+        </h2>
+        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto">
+          سجل بياناتك للتواصل معك من قبل فريق الاستشارات وتزويدك بكتيب المشروع والمساحات المتاحة والأسعار فور الطرح.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+      <div class="bg-white border border-surface-border rounded-sm p-6 sm:p-8 shadow-xs">
         
-        <!-- Inquiry Form (7 cols) -->
-        <div class="lg:col-span-7 bg-surface-light border border-surface-border rounded-sm p-6 sm:p-10 shadow-sm text-right">
-          <form id="lead-form" onsubmit="handleLeadSubmit(event)" class="space-y-5">
-            
-            <!-- Full Name -->
-            <div>
-              <label for="lead-name" class="block text-xs font-bold text-slate-primary mb-2">
-                الاسم الكامل <span class="text-stone-muted">*</span>
-              </label>
-              <input
-                type="text"
-                id="lead-name"
-                name="name"
-                required
-                placeholder="مثال: محمد"
-                class="w-full px-4 py-3 text-sm bg-white border border-surface-border rounded-sm focus:outline-none focus:border-slate-primary transition-colors text-right"
-              />
-            </div>
+        <form onsubmit="handleLeadSubmit(event)" class="space-y-5">
+          
+          <div>
+            <label for="lead-name" class="block text-xs font-bold text-slate-primary mb-1.5">
+              الاسم الكريم:
+            </label>
+            <input
+              type="text"
+              id="lead-name"
+              required
+              placeholder="مثال: محمد"
+              class="w-full px-4 py-2.5 text-xs sm:text-sm bg-surface-light border border-surface-border rounded-sm focus:outline-none focus:border-slate-primary focus:ring-1 focus:ring-slate-primary transition-colors text-right"
+            />
+          </div>
 
-            <!-- Phone Number -->
-            <div>
-              <label for="lead-phone" class="block text-xs font-bold text-slate-primary mb-2">
-                رقم الجوال <span class="text-stone-muted">*</span>
-              </label>
-              <input
-                type="tel"
-                id="lead-phone"
-                name="phone"
-                required
-                dir="ltr"
-                placeholder="05XXXXXXXX"
-                class="w-full px-4 py-3 text-sm bg-white border border-surface-border rounded-sm focus:outline-none focus:border-slate-primary transition-colors text-right"
-              />
-            </div>
+          <div>
+            <label for="lead-phone" class="block text-xs font-bold text-slate-primary mb-1.5">
+              رقم الجوال:
+            </label>
+            <input
+              type="tel"
+              id="lead-phone"
+              dir="ltr"
+              required
+              placeholder="05XXXXXXXX"
+              class="w-full px-4 py-2.5 text-xs sm:text-sm bg-surface-light border border-surface-border rounded-sm focus:outline-none focus:border-slate-primary focus:ring-1 focus:ring-slate-primary transition-colors text-left font-mono"
+            />
+          </div>
 
-            <!-- Interest Type Dropdown -->
-            <div>
-              <label for="lead-interest" class="block text-xs font-bold text-slate-primary mb-2">
-                نوع الاهتمام <span class="text-stone-muted">*</span>
-              </label>
-              <div class="relative">
-                <select id="lead-interest" name="interest" class="w-full bg-white border border-surface-border px-4 py-3 text-sm text-gray-900 outline-none focus:border-stone-accent transition-colors rounded-sm text-right" required>
-                <option value="" disabled selected>اختر نوع الاهتمام</option>
-                <option value="project_name">كام الفلل العائلية</option>
-                <option value="other_inquiry">استفسار آخر</option>
-              </select>
-                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-4 text-gray-500">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-                </div>
-              </div>
-            </div>
+          <div>
+            <label for="lead-interest" class="block text-xs font-bold text-slate-primary mb-1.5">
+              نوع الاهتمام:
+            </label>
+            <select
+              id="lead-interest"
+              class="w-full px-4 py-2.5 text-xs sm:text-sm bg-surface-light border border-surface-border rounded-sm focus:outline-none focus:border-slate-primary focus:ring-1 focus:ring-slate-primary transition-colors text-right"
+            >
+              <option value="villas" selected>كام الفلل العائلية</option>
+              <option value="general">استفسار آخر</option>
+            </select>
+          </div>
 
-            <!-- Optional Notes -->
-            <div>
-              <label for="lead-notes" class="block text-xs font-bold text-slate-primary mb-2">
-                ملاحظات أو استفسار إضافي (اختياري)
-              </label>
-              <textarea
-                id="lead-notes"
-                name="notes"
-                rows="3"
-                placeholder="أية متطلبات أو تفاصيل خاصة ترغب في مشاركتها..."
-                class="w-full px-4 py-3 text-sm bg-white border border-surface-border rounded-sm focus:outline-none focus:border-slate-primary transition-colors text-right"
-              ></textarea>
-            </div>
-
-            <!-- Submit CTA -->
+          <div class="pt-2">
             <button
               type="submit"
               id="btn-submit-lead"
-              class="w-full py-4 px-6 bg-slate-primary hover:bg-slate-deep text-white text-xs sm:text-sm font-bold rounded-sm shadow-md transition-all duration-300 flex items-center justify-center gap-2"
+              class="w-full py-3 text-xs sm:text-sm font-bold bg-slate-primary text-white rounded-sm hover:bg-slate-deep transition-colors cursor-pointer shadow-sm"
             >
               <span>تأكيد تسجيل الاهتمام</span>
-              <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
-
-            <!-- Success Alert Box (Hidden Initially) -->
-            <div id="lead-success-msg" class="hidden p-4 bg-white border border-slate-primary text-slate-primary rounded-sm text-xs sm:text-sm leading-relaxed text-right font-medium">
-              تم استلام طلب تسجيل اهتمامك بمشروع كام الفلل العائلية بنجاح. سيتواصل معك فريق الاستشارات والتأجير قريباً.
-            </div>
-
-          </form>
-        </div>
-
-        <!-- Official Contact Details (5 cols) -->
-        <div class="lg:col-span-5 space-y-6 text-right">
-          
-          <div class="bg-surface-light border border-surface-border rounded-sm p-6 sm:p-8 text-right">
-            <h4 class="text-base font-bold text-slate-primary font-display mb-4 text-right">
-              الاتصال المباشر وخدمة العملاء
-            </h4>
-            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6 font-normal text-right">
-              يسعد فريق شركة كام العقارية بالرد على استفساراتكم وتزويدكم بالكتيبات والعروض الاستثمارية فور إطلاقها.
-            </p>
-
-            <div class="space-y-4">
-              <!-- Unified Phone Channel -->
-              <div class="flex items-center gap-3 justify-start p-3.5 bg-white border border-surface-border rounded-sm">
-                <div class="w-9 h-9 rounded-sm bg-slate-primary text-white flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                </div>
-                <div class="text-right">
-                  <span class="text-[11px] text-gray-500 block">الاتصال بالرقم الموحد</span>
-                  <a href="tel:920066650" class="text-sm font-bold text-slate-primary hover:underline" dir="ltr">
-                    920066650
-                  </a>
-                </div>
-              </div>
-
-              <!-- Location Maps -->
-              <div class="flex items-center gap-3 justify-start p-3.5 bg-white border border-surface-border rounded-sm">
-                <div class="w-9 h-9 rounded-sm bg-slate-primary text-white flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-                </div>
-                <div class="text-right">
-                  <span class="text-[11px] text-gray-500 block">موقع المشروع</span>
-                  <a href="https://maps.app.goo.gl/B4QtaZXjB1DKVim8A" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm font-bold text-slate-primary hover:underline">
-                    حي القيروان، الرياض (خرائط Google ←)
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-6 pt-6 border-t border-surface-border text-xs text-gray-500 leading-relaxed text-right">
-              شركة كام العقارية — سجل تجاري معتمد ومرخص من الهيئة العامة للعقار.
-            </div>
-
           </div>
 
+        </form>
+
+        <!-- Success Notification -->
+        <div id="lead-success-msg" class="hidden mt-4 p-3.5 bg-slate-primary text-white text-xs rounded-sm border border-stone-muted/40 text-center">
+          تم استلام طلبك بنجاح. سيتواصل معك مستشار شركة كام العقارية في أقرب وقت.
+        </div>
+
+        <!-- Phone Contact Attribution -->
+        <div class="mt-6 pt-4 border-t border-surface-border/60 text-center">
+          <p class="text-xs text-gray-500 font-medium">
+            أو يمكنك الاتصال المباشر بفريق المبيعات:
+          </p>
+          <a href="tel:920066650" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-primary hover:text-stone-muted transition-colors mt-1 font-mono">
+            <span>الاتصال بالرقم الموحد: 920066650</span>
+          </a>
         </div>
 
       </div>
@@ -656,9 +1183,8 @@
     </div>
   </section>
 
-
   <!-- ══════════════════════════════════════════════════════ -->
-  <!-- FOOTER                                                 -->
+  <!-- CORPORATE FOOTER                                       -->
   <!-- ══════════════════════════════════════════════════════ -->
   <footer class="bg-slate-primary text-white py-12 lg:py-16 border-t border-white/10 text-right">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -675,101 +1201,220 @@
               onerror="this.onerror=null; this.src='https://www.kamrs.com/assets/images/logo.png';"
             />
           </a>
-          <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4 font-normal text-right">
-            شركة كام العقارية — رواد التطوير العقاري المعماري في الرياض. نبتكر مشاريع تجارية وسكنية تُلهم المستقبل.
+          <p class="text-xs text-gray-400 leading-relaxed font-light mb-4">
+            شركة كام العقارية — نبتكر مساحات عقارية متطورة تتجاوز المألوف وترتقي بجودة الحياة وبيئة الأعمال في المملكة.
           </p>
+          <div class="text-[11px] text-gray-500 font-mono space-y-0.5">
+            <div>ترخيص فال: 1200021614</div>
+            <div>سجل تجاري: 1010729352</div>
+          </div>
         </div>
 
         <!-- Quick Links -->
         <div class="text-right">
-          <h4 class="text-xs font-bold tracking-wider text-gray-300 uppercase mb-4 font-display text-right">روابط سريعة</h4>
-          <ul class="space-y-2.5 text-xs sm:text-sm text-gray-400 text-right">
-            <li><a href="index.html" class="hover:text-white transition-colors">الرئيسية</a></li>
-            <li><a href="index.html#portfolio" class="hover:text-white transition-colors">كافة المشاريع</a></li>
-            <li><a href="kam-tower.html" class="hover:text-white transition-colors">كام البرج (حي القيروان)</a></li>
-            <li><a href="kam-modern-offices.html" class="hover:text-white transition-colors">كام المكاتب العصرية (حي الملقا)</a></li>
-            <li><a href="kam-private-offices.html" class="hover:text-white transition-colors">كام المكاتب الخاصة (حي الملقا)</a></li>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-stone-muted mb-4 font-bold">مشاريعنا</h4>
+          <ul class="space-y-2.5 text-xs text-gray-300">
+            <li><a href="kam-tower.html" class="hover:text-white transition-colors">برج كام — طريق الملك فهد</a></li>
+            <li><a href="kam-private-offices.html" class="hover:text-white transition-colors">كام المكاتب الخاصة — حطين</a></li>
+            <li><a href="kam-modern-offices.html" class="hover:text-white transition-colors">كام المكاتب العصرية — الملقا</a></li>
+            <li><a href="kam-family-villas.html" class="hover:text-white transition-colors text-white font-semibold">كام الفلل العائلية — القيروان</a></li>
           </ul>
         </div>
 
-        <!-- Project Sections -->
+        <!-- Contact & Support -->
         <div class="text-right">
-          <h4 class="text-xs font-bold tracking-wider text-gray-300 uppercase mb-4 font-display text-right">أقسام الصفحة</h4>
-          <ul class="space-y-2.5 text-xs sm:text-sm text-gray-400 text-right">
-            <li><a href="#overview" class="hover:text-white transition-colors">نظرة عامة</a></li>
-            <li><a href="#gallery" class="hover:text-white transition-colors">معرض الصور</a></li>
-            <li><a href="#metrics" class="hover:text-white transition-colors">أرقام ومواصفات المشروع</a></li>
-            <li><a href="#inquiry" class="hover:text-white transition-colors">تسجيل الاهتمام</a></li>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-stone-muted mb-4 font-bold">التواصل</h4>
+          <ul class="space-y-2.5 text-xs text-gray-300">
+            <li class="flex items-center gap-2">
+              <span class="text-gray-500 font-mono">هاتف:</span>
+              <a href="tel:920066650" class="hover:text-white transition-colors font-mono font-semibold">920066650</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-gray-500 font-mono">بريد:</span>
+              <a href="mailto:info@kamrs.com" class="hover:text-white transition-colors font-mono">info@kamrs.com</a>
+            </li>
+            <li class="text-gray-400">الرياض، المملكة العربية السعودية</li>
           </ul>
         </div>
 
-        <!-- Official Contact -->
+        <!-- Legal & Disclaimers -->
         <div class="text-right">
-          <h4 class="text-xs font-bold tracking-wider text-gray-300 uppercase mb-4 font-display text-right">التواصل الرسمي</h4>
-          <div class="space-y-3 text-xs sm:text-sm text-gray-400 text-right">
-            <p class="text-gray-300 font-semibold text-right">المملكة العربية السعودية، الرياض</p>
-            <p class="text-right">حي القيروان</p>
-            <div class="pt-2 text-right">
-              <span class="text-xs text-gray-400 block mb-1">مركز الاتصال الموحد:</span>
-              <a href="tel:920066650" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:underline" dir="ltr">
-                <svg class="w-4 h-4 text-stone-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                <span>920066650</span>
-              </a>
-            </div>
-          </div>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-stone-muted mb-4 font-bold">الخصوصية والشروط</h4>
+          <p class="text-[11px] text-gray-400 leading-relaxed font-light mb-3">
+            جميع المواد والمعلومات والمخططات الواردة خاضعة للتحديثات وتعتبر تصاميم معمارية مرجعية وفق الأنظمة واللوائح المعمول بها.
+          </p>
+          <a href="privacy-terms.html" class="text-xs text-stone-muted hover:text-white underline transition-colors">
+            سياسة الخصوصية والشروط القانونية
+          </a>
         </div>
 
       </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4 text-right">
-        <p>© 2026 شركة كام العقارية. جميع الحقوق محفوظة.</p>
-        <div class="flex items-center gap-4 text-xs text-gray-400">
-          <a href="privacy-terms.html" class="hover:text-stone-accent transition-colors">سياسة الخصوصية والشروط والأحكام</a>
-          <span>•</span>
-          <a href="https://www.linkedin.com/company/kam-real-estate/" target="_blank" rel="noopener noreferrer" class="hover:text-stone-accent transition-colors">LinkedIn</a>
-          <span>•</span>
-          <a href="https://www.instagram.com/kamrealestate.sa" target="_blank" rel="noopener noreferrer" class="hover:text-stone-accent transition-colors">Instagram</a>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <div>
+          جميع الحقوق محفوظة © <span id="current-year">2026</span> شركة كام العقارية
+        </div>
+        <div class="text-right font-mono text-[11px]">
+          KAM REAL ESTATE • OFFICIAL PORTAL
         </div>
       </div>
+
     </div>
   </footer>
 
-
   <!-- ══════════════════════════════════════════════════════ -->
-  <!-- LIGHTBOX MODAL                                         -->
+  <!-- INTERACTIVE LIGHTBOX GALLERY MODAL                     -->
   <!-- ══════════════════════════════════════════════════════ -->
-  <div id="image-modal" class="fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 bg-black/85 backdrop-blur-md p-4 sm:p-6" onclick="handleModalBackdropClick(event)">
-    <div class="relative max-w-5xl w-full flex flex-col items-center">
+  <div id="image-modal" onclick="handleModalBackdropClick(event)" class="p-2 sm:p-4 md:p-6">
+    <div class="relative max-w-6xl w-full mx-auto flex flex-col items-center">
       
-      <div class="w-full flex items-center justify-between pb-3 text-white">
-        <h4 id="modal-title" class="text-xs sm:text-sm font-semibold text-gray-200 truncate pr-2">معاينة معمارية</h4>
-        <button type="button" onclick="closeLightbox()" class="text-white/70 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors" title="إغلاق">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
+      <!-- Top Subtle Highlight Bar (يبين وش ذي الصورة وعن اي شقة تتكلم) -->
+      <div class="w-full flex items-center justify-between pb-3 mb-2 border-b border-white/15 text-white gap-3">
+        <div class="flex items-center gap-2 sm:gap-3 overflow-hidden">
+          <span class="w-2 h-2 rounded-full bg-stone-accent animate-pulse flex-shrink-0"></span>
+          <span id="modal-category" class="text-xs sm:text-sm font-mono font-bold text-stone-muted bg-white/10 px-2.5 py-0.5 rounded-sm border border-white/10 whitespace-nowrap">
+            كام الفلل العائلية
+          </span>
+          <span class="text-gray-400 hidden sm:inline">•</span>
+          <h4 id="modal-title" class="text-xs sm:text-base font-bold text-white truncate">
+            معاينة معمارية
+          </h4>
+        </div>
+
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <span id="modal-counter" class="text-xs font-mono text-gray-400 bg-white/5 px-2 py-0.5 rounded-sm border border-white/10">
+            01 / 20
+          </span>
+          <button type="button" onclick="closeLightbox()" class="text-gray-400 hover:text-white transition-colors p-1.5 rounded-sm hover:bg-white/10 cursor-pointer" title="إغلاق (Esc)">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
       </div>
 
-      <div class="w-full flex items-center justify-center max-h-[85vh] overflow-hidden rounded-sm bg-black/40 border border-white/10 p-2 sm:p-4">
-        <img id="modal-img" src="" alt="معاينة اللقطة المعمارية" class="max-h-[80vh] max-w-full object-contain mx-auto rounded-xs shadow-2xl transition-transform duration-300" />
+      <!-- Main Image Viewport with Previous & Next Navigation -->
+      <div class="relative w-full flex items-center justify-center max-h-[75vh] sm:max-h-[80vh] overflow-hidden rounded-sm bg-black/40 border border-white/10 group">
+        
+        <!-- Previous Button (RTL: اليمين هو السابق) -->
+        <button type="button" onclick="prevLightbox(event)" aria-label="الصورة السابقة"
+                class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-slate-primary/80 hover:bg-slate-primary text-white p-2.5 sm:p-3 rounded-full border border-white/20 transition-all cursor-pointer shadow-lg hover:scale-110">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <!-- Main Image -->
+        <img id="modal-img" src="" alt="معاينة الصورة" class="max-h-[72vh] sm:max-h-[78vh] max-w-full object-contain mx-auto transition-transform duration-300 select-none" />
+
+        <!-- Next Button (RTL: اليسار هو التالي) -->
+        <button type="button" onclick="nextLightbox(event)" aria-label="الصورة التالية"
+                class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-slate-primary/80 hover:bg-slate-primary text-white p-2.5 sm:p-3 rounded-full border border-white/20 transition-all cursor-pointer shadow-lg hover:scale-110">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+      </div>
+
+      <!-- Bottom Keyboard Navigation Hint -->
+      <div class="w-full pt-2 text-center text-[11px] text-gray-400 font-mono hidden sm:block">
+        استخدم أسهم لوحة المفاتيح (← / →) للتنقل السلس بين الصور • اضغط Esc للإغلاق
       </div>
 
     </div>
   </div>
 
-
   <!-- ══════════════════════════════════════════════════════ -->
-  <!-- JAVASCRIPT LOGIC                                       -->
+  <!-- PURE SCROLL-DRIVEN PHOTO ROLLING JAVASCRIPT ENGINE     -->
   <!-- ══════════════════════════════════════════════════════ -->
   <script>
-    // Native In-Page Lightbox Modal Functions
-    function openLightbox(src, title) {
+    // ─── COMPLETE REGISTERED GALLERY ITEMS ───
+    const galleryItems = [
+      // الفلل المطلة على الشارع الرئيسي
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/المجلس.jpg', title: 'مجلس الضيوف المستقل', category: 'الفلل المطلة على الشارع الرئيسي' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/صالة المعيشة.jpg', title: 'صالة المعيشة العائلية', category: 'الفلل المطلة على الشارع الرئيسي' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/منطقة تناول الطعام.jpg', title: 'منطقة تناول الطعام', category: 'الفلل المطلة على الشارع الرئيسي' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/المطبخ.jpg', title: 'المطبخ المودرن', category: 'الفلل المطلة على الشارع الرئيسي' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/غرف النوم.jpg', title: 'أجنحة غرف النوم الفاخرة', category: 'الفلل المطلة على الشارع الرئيسي' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/مسبح خاص.jpg', title: 'المسبح الخاص والجلسات المظللة', category: 'الفلل المطلة على الشارع الرئيسي' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/شرفة السطح العلوي.jpg', title: 'شرفة السطح العلوي', category: 'الفلل المطلة على الشارع الرئيسي' },
+
+      // الفلل المطلة على الحديقة
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/المجلس.jpg', title: 'مجلس الضيافة الراقي', category: 'الفلل المطلة على الحديقة' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/صالة المعيشة.jpg', title: 'صالة المعيشة المطلة على الأفنية', category: 'الفلل المطلة على الحديقة' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/المطبخ.jpg', title: 'المطبخ المفتوح الحديث', category: 'الفلل المطلة على الحديقة' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/غرف النوم.jpg', title: 'أجنحة النوم الرئيسية', category: 'الفلل المطلة على الحديقة' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/مسبح خاص.jpg', title: 'المسبح الخاص وإطلالة الحديقة', category: 'الفلل المطلة على الحديقة' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الحديقة/شرفة السطح العلوي.jpg', title: 'شرفة السطح البانورامية', category: 'الفلل المطلة على الحديقة' },
+
+      // سيمبلكس الشقق العائلية
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/المجلس.jpg', title: 'مجلس الضيافة المنفصل', category: 'سيمبلكس الشقق العائلية' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/صالة المعيشة.jpg', title: 'صالة المعيشة العائلية الرحبة', category: 'سيمبلكس الشقق العائلية' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/المطبخ.jpg', title: 'المطبخ العملي الأنيق', category: 'سيمبلكس الشقق العائلية' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/غرف النوم.jpg', title: 'أجنحة غرف النوم الهادئة', category: 'سيمبلكس الشقق العائلية' },
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/سيمبلكس الشقق العائلية/شرفة السطح العلوي.jpg', title: 'شرفة السطح والجلسة الخارجية', category: 'سيمبلكس الشقق العائلية' },
+
+      // المخطط المعماري
+      { src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/المخطط المعماري.jpg', title: 'المخطط المعماري المعتمد — كام الفلل العائلية', category: 'المخطط الهندسي العام' },
+
+      // صور المعرض المعماري
+      { src: './صور المشاريع/كام الفلل العائلية/69e0b988ad0778e2fae9d95d_Header.jpg', title: 'الواجهة المعمارية الرئيسية — كام الفلل العائلية', category: 'الواجهة المعمارية' },
+      { src: './صور المشاريع/كام الفلل العائلية/6a2ea4131ad72d3a0d3f4095_1.jpg', title: 'لقطة معمارية 1 — كام الفلل العائلية', category: 'معرض الصور المعمارية' },
+      { src: './صور المشاريع/كام الفلل العائلية/6a2ea4132243172b56a35db6_2.jpg', title: 'لقطة معمارية 2 — كام الفلل العائلية', category: 'معرض الصور المعمارية' },
+      { src: './صور المشاريع/كام الفلل العائلية/6a2ea4132243172b56a35dcf_3.jpg', title: 'لقطة معمارية 3 — كام الفلل العائلية', category: 'معرض الصور المعمارية' },
+      { src: './صور المشاريع/كام الفلل العائلية/6a2ea413298f7a56a1d6ef46_4.jpg', title: 'لقطة معمارية 4 — كام الفلل العائلية', category: 'معرض الصور المعمارية' },
+      { src: './صور المشاريع/كام الفلل العائلية/6a2ea4121cdaa9b9e0314c9d_5.jpg', title: 'لقطة معمارية 5 — كام الفلل العائلية', category: 'معرض الصور المعمارية' },
+      { src: './صور المشاريع/كام الفلل العائلية/6a2ea412c4421c75c1e5fa30_6.jpg', title: 'لقطة معمارية 6 — كام الفلل العائلية', category: 'معرض الصور المعمارية' },
+      { src: './صور المشاريع/كام الفلل العائلية/6a2ea4129b060f6e0743cbca_7.jpg', title: 'لقطة معمارية 7 — كام الفلل العائلية', category: 'معرض الصور المعمارية' },
+      { src: './صور المشاريع/كام الفلل العائلية/6a2ea412bb9b73dc03c7c334_8.jpg', title: 'لقطة معمارية 8 — كام الفلل العائلية', category: 'معرض الصور المعمارية' }
+    ];
+
+    let currentGalleryIdx = 0;
+
+    function openLightbox(src, title, category) {
+      let idx = galleryItems.findIndex(item => item.src === src);
+      if (idx === -1) {
+        galleryItems.push({ src, title: title || 'معاينة معمارية', category: category || 'كام الفلل العائلية' });
+        idx = galleryItems.length - 1;
+      }
+      openGalleryAt(idx);
+    }
+
+    function openLightboxBySrc(src) {
+      let idx = galleryItems.findIndex(item => item.src === src);
+      if (idx === -1) idx = 0;
+      openGalleryAt(idx);
+    }
+
+    function openPhotoStopFromElement(el) {
+      const parent = el.closest('.photo-stop');
+      if (parent) {
+        const src = parent.getAttribute('data-photo-src');
+        if (src) openLightboxBySrc(src);
+      }
+    }
+
+    function openGalleryAt(index) {
+      if (index < 0) index = galleryItems.length - 1;
+      if (index >= galleryItems.length) index = 0;
+      currentGalleryIdx = index;
+
+      const item = galleryItems[currentGalleryIdx];
       const modal = document.getElementById('image-modal');
-      const modalImg = document.getElementById('modal-img');
-      const modalTitle = document.getElementById('modal-title');
-      
-      if (modal && modalImg) {
-        modalImg.src = src;
-        if (modalTitle) modalTitle.textContent = title || 'معاينة معمارية';
+      const img = document.getElementById('modal-img');
+      const title = document.getElementById('modal-title');
+      const category = document.getElementById('modal-category');
+      const counter = document.getElementById('modal-counter');
+
+      if (img) {
+        img.style.opacity = '0.3';
+        img.src = item.src;
+        img.alt = item.title;
+        setTimeout(() => { img.style.opacity = '1'; }, 80);
+      }
+      if (title) title.textContent = item.title;
+      if (category) category.textContent = item.category;
+      if (counter) counter.textContent = (currentGalleryIdx + 1).toString().padStart(2, '0') + ' / ' + galleryItems.length.toString().padStart(2, '0');
+
+      if (modal) {
         modal.classList.add('active');
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100', 'pointer-events-auto');
         document.body.style.overflow = 'hidden';
       }
     }
@@ -777,9 +1422,20 @@
     function closeLightbox() {
       const modal = document.getElementById('image-modal');
       if (modal) {
-        modal.classList.remove('active');
+        modal.classList.remove('active', 'opacity-100', 'pointer-events-auto');
+        modal.classList.add('opacity-0', 'pointer-events-none');
         document.body.style.overflow = '';
       }
+    }
+
+    function prevLightbox(e) {
+      if (e) e.stopPropagation();
+      openGalleryAt(currentGalleryIdx - 1);
+    }
+
+    function nextLightbox(e) {
+      if (e) e.stopPropagation();
+      openGalleryAt(currentGalleryIdx + 1);
     }
 
     function handleModalBackdropClick(e) {
@@ -788,11 +1444,114 @@
       }
     }
 
-    document.addEventListener('keydown', function(e) {
+    // Keyboard listener for navigation
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('image-modal');
+      if (!modal || !modal.classList.contains('active')) return;
+
       if (e.key === 'Escape') {
         closeLightbox();
+      } else if (e.key === 'ArrowRight') {
+        prevLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        nextLightbox();
       }
     });
+
+    let currentStickyPhotoData = {
+      src: './صور المشاريع/كام الفلل العائلية/تطوير الموقع/الفلل المطلة على الشارع الرئيسي/المجلس.jpg',
+      title: 'مجلس الضيوف المستقل — الفلل المطلة على الشارع الرئيسي',
+      modelTitle: 'الفلل المطلة على الشارع الرئيسي',
+      spaceTitle: 'مجلس الضيوف المستقل'
+    };
+
+    function updateStickyOnScroll(stopEl) {
+      if (!stopEl) return;
+      const modelGroup = stopEl.getAttribute('data-model-group');
+      const modelName = stopEl.getAttribute('data-model-name');
+      const spaceTitle = stopEl.getAttribute('data-space-title');
+      const photoSrc = stopEl.getAttribute('data-photo-src');
+
+      currentStickyPhotoData = {
+        src: photoSrc,
+        title: spaceTitle + ' — ' + modelName,
+        modelTitle: modelName,
+        spaceTitle: spaceTitle
+      };
+
+      const mTag = document.getElementById('sticky-photo-model-tag');
+      const bTag = document.getElementById('sticky-photo-badge-tag');
+      const cap = document.getElementById('sticky-photo-caption');
+
+      if (mTag) mTag.textContent = modelName;
+      if (bTag) bTag.textContent = spaceTitle;
+      if (cap) cap.textContent = spaceTitle + ' — ' + modelName;
+
+      const stickyImg = document.getElementById('sticky-space-img');
+      if (stickyImg && stickyImg.src !== photoSrc) {
+        stickyImg.style.opacity = '0.25';
+        setTimeout(() => {
+          stickyImg.src = photoSrc;
+          stickyImg.alt = spaceTitle;
+          stickyImg.style.opacity = '1';
+        }, 100);
+      }
+
+      // Update Navigation Buttons (highlight active model)
+      const navBtns = {
+        street: 'nav-btn-street',
+        garden: 'nav-btn-garden',
+        simplex: 'nav-btn-simplex'
+      };
+
+      Object.keys(navBtns).forEach(k => {
+        const btn = document.getElementById(navBtns[k]);
+        if (btn) {
+          if (k === modelGroup) {
+            btn.className = 'model-nav-btn active px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-sm transition-all cursor-pointer ring-2 ring-stone-muted/60 bg-slate-primary text-white font-bold shadow-md whitespace-nowrap flex-shrink-0';
+          } else {
+            btn.className = 'model-nav-btn px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-sm transition-all cursor-pointer bg-white border border-surface-border text-gray-700 hover:border-slate-primary hover:text-slate-primary font-medium whitespace-nowrap flex-shrink-0';
+          }
+        }
+      });
+    }
+
+    function scrollToPhotoStop(stopId) {
+      const el = document.getElementById(stopId);
+      if (el) {
+        const yOffset = -100;
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+
+    function openCurrentStickyPhotoLightbox() {
+      openLightbox(currentStickyPhotoData.src, currentStickyPhotoData.title);
+    }
+
+    // Precise IntersectionObserver Engine for Natural Pure Scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const stops = document.querySelectorAll('.photo-stop');
+      if ('IntersectionObserver' in window && stops.length > 0) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              stops.forEach(s => s.classList.remove('is-active'));
+              entry.target.classList.add('is-active');
+              updateStickyOnScroll(entry.target);
+            }
+          });
+        }, {
+          root: null,
+          rootMargin: '-15% 0px -30% 0px',
+          threshold: 0.2
+        });
+
+        stops.forEach(stop => obs.observe(stop));
+      }
+    });
+
+    // Lightbox handled by Interactive Engine above
 
     // Lead Form Submission Handler
     function handleLeadSubmit(e) {
@@ -816,6 +1575,5 @@
       }, 500);
     }
   </script>
-
 </body>
 </html>
