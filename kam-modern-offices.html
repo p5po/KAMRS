@@ -187,13 +187,12 @@
   <section id="overview" class="relative pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-44 lg:pb-32 bg-slate-primary overflow-hidden border-b border-white/[0.08]">
     
     <!-- Hero Background Image with Subtle Architectural Dark Overlay -->
-    <div class="absolute inset-0 z-0">
-      <img
-        src="./صور المشاريع/كام المكاتب العصرية/69df8264fd8d8a7e349d8ee9_Header.jpg"
-        alt="كام المكاتب العصرية — الواجهة المعمارية"
-        class="w-full h-full object-cover object-center opacity-25 scale-105 transform pointer-events-none"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-primary via-slate-primary/90 to-slate-primary/65"></div>
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <!-- Ambient Looping Video Header -->
+      <video autoplay loop muted playsinline class="w-full h-full object-cover object-center opacity-30 scale-105 pointer-events-none">
+        <source src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/6a78349474a6ae5486a5cf54_6a783a65640a614f8583a2fc_Header Video_mp4.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-primary via-slate-primary/85 to-slate-primary/60"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -245,16 +244,16 @@
           </p>
 
           <!-- Hero Actions -->
-          <div class="flex flex-wrap gap-4 items-center">
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center w-full">
             <a href="#inquiry"
-               class="inline-flex items-center gap-2.5 bg-white text-slate-primary hover:bg-gray-100 px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold transition-all duration-300 shadow-md rounded-sm">
+               class="inline-flex items-center justify-center gap-2.5 bg-white text-slate-primary hover:bg-gray-100 px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold transition-all duration-300 shadow-md rounded-sm w-full sm:w-auto text-center">
               <span>تسجيل الاهتمام بالمشروع</span>
               <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
             </a>
 
             <!-- EXACT Google Maps Link -->
             <a href="https://maps.app.goo.gl/TFJ8AQUVGxuGb4pe9" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 border border-white/25 hover:border-white text-white px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold transition-all duration-300 hover:bg-white/10 rounded-sm">
+               class="inline-flex items-center justify-center gap-2 border border-white/25 hover:border-white text-white px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold transition-all duration-300 hover:bg-white/10 rounded-sm w-full sm:w-auto text-center">
               <svg class="w-4 h-4 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
               موقع المشروع على خرائط Google
             </a>
@@ -262,21 +261,19 @@
 
         </div>
 
-        <!-- Featured Exterior Facade Showcase Card (5 cols) -->
-        <div class="lg:col-span-5">
-          <div class="relative rounded-sm overflow-hidden border border-white/20 hover:border-stone-muted/60 transition-all duration-500 shadow-2xl group bg-slate-deep cursor-pointer"
+        <!-- Featured Architectural Facade Card (5 cols) -->
+        <div class="lg:col-span-5 w-full">
+          <div class="relative rounded-sm overflow-hidden border border-white/20 hover:border-stone-muted/60 transition-all duration-500 shadow-2xl bg-slate-deep cursor-pointer group"
                onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/69df8264fd8d8a7e349d8ee9_Header.jpg', 'الواجهة المعمارية الرئيسية — كام المكاتب العصرية')">
-            <div class="aspect-[4/3] sm:aspect-[5/4] lg:aspect-[4/3] overflow-hidden">
-              <img
-                src="./صور المشاريع/كام المكاتب العصرية/69df8264fd8d8a7e349d8ee9_Header.jpg"
-                alt="الواجهة المعمارية الرئيسية — كام المكاتب العصرية"
-                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
+            <div class="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] overflow-hidden">
+              <img src="./صور المشاريع/كام المكاتب العصرية/69df8264fd8d8a7e349d8ee9_Header.jpg"
+                   alt="الواجهة المعمارية الرئيسية — كام المكاتب العصرية"
+                   class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-primary/95 via-transparent to-transparent flex items-end p-6 pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-primary/95 via-transparent to-transparent flex items-end p-4 sm:p-5 pointer-events-none">
               <div class="text-right">
-                <span class="text-xs font-bold text-gray-300 uppercase tracking-wider block">الواجهة المعمارية الرئيسية</span>
-                <span class="text-white text-sm font-semibold">كام المكاتب العصرية — حي الملقا</span>
+                <span class="text-[10px] sm:text-[11px] font-bold text-gray-300 uppercase tracking-wider block">الواجهة المعمارية الرئيسية</span>
+                <span class="text-white text-xs sm:text-sm font-bold">كام المكاتب العصرية — حي الملقا</span>
               </div>
             </div>
           </div>
@@ -287,10 +284,28 @@
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- FULL-WIDTH CINEMATIC VIDEO (من اليمين إلى اليسار كامل)  -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="w-full bg-black overflow-hidden border-b border-surface-border">
+    <div class="w-full relative aspect-[16/9] sm:aspect-[21/9] max-h-[75vh]">
+      <video autoplay loop muted playsinline
+             poster="./صور المشاريع/كام المكاتب العصرية/69df8264fd8d8a7e349d8ee9_Header.jpg"
+             class="w-full h-full object-cover">
+        <source src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/6a78349474a6ae5486a5cf54_6a783a65640a614f8583a2fc_Header Video_mp4.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
 <!-- ══════════════════════════════════════════════════════ -->
   <!-- VISUAL GALLERY (#gallery)                              -->
   <!-- ══════════════════════════════════════════════════════ -->
-  <section id="gallery" class="py-16 sm:py-24 bg-white border-b border-surface-border">
+    <!-- ══════════════════════════════════════════════════════ -->
+  <!-- CINEMATIC VIDEO SHOWCASE (#video-showcase)               -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  
+
+<section id="gallery" class="py-16 sm:py-24 bg-white border-b border-surface-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-right">
       
       <div class="max-w-3xl mb-12 sm:mb-14 text-right">
@@ -410,234 +425,498 @@
 <!-- ══════════════════════════════════════════════════════ -->
   <!-- ARCHITECTURAL FLOOR PLANS (#plans)                     -->
   <!-- ══════════════════════════════════════════════════════ -->
-  <section id="plans" class="py-16 sm:py-24 lg:py-28 bg-surface-light border-b border-surface-border">
+    <!-- ══════════════════════════════════════════════════════ -->
+  <!-- DUAL SYNCHRONIZED ARCHITECTURAL FLOOR VIEWER (#plans)   -->
+  <!-- ══════════════════════════════════════════════════════ -->
+      <!-- ══════════════════════════════════════════════════════ -->
+  <!-- ARCHITECTURAL SHOWCASE: ELEVATIONS & BLUEPRINTS (#plans) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════════════════════════ -->
+  <!-- UNIFIED ARCHITECTURAL SUITE: ELEVATIONS & CAD (#plans)   -->
+  <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════════════════════════ -->
+  <!-- STICKY SPLIT-SCROLL ARCHITECTURAL SHOWCASE (#plans)      -->
+  <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════════════════════════ -->
+  <!-- PREMIER STICKY SPLIT-SCROLL ARCHITECTURAL SHOWCASE (#plans) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════════════════════════ -->
+  <!-- PREMIER STICKY SPLIT-SCROLL ARCHITECTURAL SHOWCASE (#plans) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════════════════════════ -->
+  <!-- PREMIER STICKY SPLIT-SCROLL ARCHITECTURAL SHOWCASE (#plans) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════════════════════════ -->
+  <!-- ARCHITECTURAL SHOWCASE: BOTH BLUEPRINTS & ELEVATIONS (#plans) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ══════════════════════════════════════════════════════ -->
+  <!-- DYNAMIC STICKY SPLIT-SCROLL ARCHITECTURAL SUITE (#plans) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section id="plans" class="py-12 sm:py-20 lg:py-28 bg-surface-light border-b border-surface-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="mb-10 sm:mb-14 text-right">
-        <div class="w-10 h-px bg-stone-muted mb-4 sm:mb-6"></div>
+      <div class="mb-8 sm:mb-12 text-right">
+        <div class="w-10 h-px bg-stone-muted mb-3 sm:mb-5"></div>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-primary tracking-tight font-display mb-2 sm:mb-3">
           المخططات المعمارية المعتمدة وتوزيع الأدوار
         </h2>
-        <p class="text-gray-600 max-w-2xl text-sm sm:text-base leading-relaxed font-normal">
-          استعراض معماري تفاعلي بمحاذاة الشاشة الذكية. يتم تحديث المخطط المعروض تلقائياً أثناء التمرير، مع توفير كافة التفاصيل المساحية والوظيفية لكل طابق.
+        <p class="text-gray-600 max-w-2xl text-xs sm:text-sm lg:text-base leading-relaxed font-normal">
+          استعراض معماري تفاعلي متزامن بالسكرول يربط واجهة المبنى الخارجية وشرح المواصفات على اليمين مع المساقط الهندسية الداخلية المثبتة على اليسار، لتجربة استكشاف متكاملة وبدون أي تكرار.
         </p>
       </div>
 
-      <!-- Quick Typology Navigation Bar -->
-      <div class="flex flex-wrap items-center gap-2 mb-8 pb-4 border-b border-surface-border text-xs font-bold text-gray-700">
-        <span class="text-gray-500 font-medium ml-2">الانتقال السريع:</span>
-        <a href="#stop-ground" class="px-3 py-1.5 bg-white border border-surface-border rounded-sm hover:border-slate-primary hover:text-slate-primary transition-colors">الدور الأرضي (معارض)</a>
-        <a href="#stop-first" class="px-3 py-1.5 bg-white border border-surface-border rounded-sm hover:border-slate-primary hover:text-slate-primary transition-colors">الطابق الأول (مكاتب فاخرة)</a>
-        <a href="#stop-second" class="px-3 py-1.5 bg-white border border-surface-border rounded-sm hover:border-slate-primary hover:text-slate-primary transition-colors">الطابق الثاني (مكاتب وحدائق)</a>
-        <a href="#stop-basements" class="px-3 py-1.5 bg-white border border-surface-border rounded-sm hover:border-slate-primary hover:text-slate-primary transition-colors">دورين التسوية (قبو 1 و 2)</a>
+      <!-- Quick Floor Selector Bar (Responsive Horizontal Scroll on Mobile, Sticky Pills) -->
+      <div class="mb-8 sm:mb-12 pb-3 border-b border-surface-border sticky top-16 sm:top-20 z-30 bg-surface-light/95 backdrop-blur-md -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 flex-nowrap sm:flex-wrap text-right">
+          <span class="text-xs font-bold text-gray-500 whitespace-nowrap hidden sm:inline ml-1">الانتقال السريع للأدوار:</span>
+          <button type="button" onclick="scrollToFloorStop('stop-ground')" id="nav-btn-ground"
+                  class="floor-nav-btn active px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-sm transition-all cursor-pointer ring-2 ring-stone-muted/60 bg-slate-primary text-white font-bold shadow-md whitespace-nowrap flex-shrink-0">
+            الطابق الأرضي (829 م²)
+          </button>
+          <button type="button" onclick="scrollToFloorStop('stop-first')" id="nav-btn-first"
+                  class="floor-nav-btn px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-sm transition-all cursor-pointer bg-white border border-surface-border text-gray-700 hover:border-slate-primary hover:text-slate-primary font-medium whitespace-nowrap flex-shrink-0">
+            الطابق الأول (948 م²)
+          </button>
+          <button type="button" onclick="scrollToFloorStop('stop-second')" id="nav-btn-second"
+                  class="floor-nav-btn px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-sm transition-all cursor-pointer bg-white border border-surface-border text-gray-700 hover:border-slate-primary hover:text-slate-primary font-medium whitespace-nowrap flex-shrink-0">
+            الطابق الثاني (442 م²)
+          </button>
+          <button type="button" onclick="scrollToFloorStop('stop-basement')" id="nav-btn-basement"
+                  class="floor-nav-btn px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-sm transition-all cursor-pointer bg-white border border-surface-border text-gray-700 hover:border-slate-primary hover:text-slate-primary font-medium whitespace-nowrap flex-shrink-0">
+            مستويات القبو (90 موقفاً)
+          </button>
+        </div>
       </div>
 
-      <!-- Sticky Split Scroll Viewport (12 Columns) -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-start relative w-full">
+      <!-- Dynamic Sticky Split Scroll Viewport Grid (12 Columns) -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start relative w-full">
         
-        <!-- Right Column (Desktop 45% / 5 cols): Scrollable Specifications Feed -->
-        <div class="md:col-span-6 lg:col-span-5 order-2 md:order-1 space-y-12 sm:space-y-16 divide-y divide-surface-border">
+        <!-- ══════════════════════════════════════════════════════ -->
+        <!-- RIGHT COLUMN (يمين - 45%): SCROLL STOPS & EXTERIOR ELEVATION -->
+        <!-- ══════════════════════════════════════════════════════ -->
+        <div class="md:col-span-6 lg:col-span-5 order-2 md:order-1 space-y-16 sm:space-y-20 divide-y divide-surface-border text-right">
           
-          <!-- 1. الدور الأرضي -->
+          <!-- 1. الطابق الأرضي -->
           <div id="stop-ground"
-               class="editorial-stop is-active pt-8 first:pt-0 text-right"
-               data-plan-src="./صور المشاريع/كام المكاتب العصرية/المخطط/الدور الارضي.jpg"
-               data-plan-title="مخطط الدور الأرضي — معارض تجارية واستقبال"
-               data-plan-model="الدور الأرضي"
-               data-plan-badge="معارض تجارية واستقبال">
+               class="editorial-stop is-active pt-8 first:pt-0"
+               data-floor="ground"
+               data-plan-src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الارضي - المكاتب و المتاجر.jpg"
+               data-plan-title="المسقط الأفقي — الطابق الأرضي (معارض ومكاتب وبهو الاستقبال)"
+               data-plan-model="الطابق الأرضي"
+               data-plan-badge="معارض + مكاتب + بهو ثلاثي الارتفاع">
             
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-[11px] font-mono font-bold text-gray-500 uppercase tracking-wider">01 / 04</span>
+            <!-- Stop Header -->
+            <div class="flex items-center gap-2 mb-2 sm:mb-3">
+              <span class="text-xs font-mono font-bold text-gray-500 uppercase tracking-wider">01 / 04</span>
               <span class="text-gray-300">•</span>
-              <span class="text-xs font-bold text-slate-primary bg-surface-card px-2.5 py-0.5 rounded-sm border border-surface-border">الدور الأرضي</span>
+              <span class="text-xs font-bold text-slate-primary bg-surface-card px-2.5 py-0.5 rounded-sm border border-surface-border">الطابق الأرضي</span>
             </div>
 
-            <h3 class="text-2xl sm:text-3xl font-bold text-slate-primary font-display mb-3">
-              الدور الأرضي (معارض تجارية واستقبال)
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-primary font-display mb-1.5 sm:mb-2">
+              الطابق الأرضي (معارض تجارية + مكاتب + استقبال رئيسي)
             </h3>
+            <p class="text-xs sm:text-sm text-stone-muted font-medium mb-4 sm:mb-5">
+              إطلالة معمارية مفتوحة على الفناء الخارجي مع بهو ثلاثي الارتفاع ومداخل مستقلة
+            </p>
 
-            <div class="inline-flex items-center gap-2 text-xs font-semibold text-slate-primary bg-white border border-surface-border px-3.5 py-1.5 rounded-sm shadow-xs mb-5 w-fit">
-              <span class="w-1.5 h-1.5 rounded-full bg-slate-primary"></span>
-              معارض تجارية مفتوحة • إطلالات زجاجية مباشرة
+            <!-- المبنى الخارجي (واجهة الطابق الأرضي على اليمين) -->
+            <div class="bg-white border border-surface-border rounded-sm p-3.5 shadow-xs mb-4 sm:mb-6">
+              <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2.5">
+                <span class="text-xs font-bold text-slate-primary flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-primary"></span>
+                  المبنى الخارجي — واجهة الأعمدة الشجرية والمدخل
+                </span>
+                <button type="button" onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/خارجي - الطابق الاول.png', 'الواجهة الخارجية — الطابق الأرضي')"
+                        class="text-[11px] text-slate-primary hover:text-stone-accent font-semibold flex items-center gap-1 cursor-pointer">
+                  <span>تكبير الواجهة</span>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7"/></svg>
+                </button>
+              </div>
+              <div class="relative aspect-[16/9] bg-slate-primary rounded-sm overflow-hidden flex items-center justify-center p-2 cursor-pointer group border border-surface-border/60"
+                   onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/خارجي - الطابق الاول.png', 'الواجهة الخارجية — الطابق الأرضي')">
+                <img src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/خارجي - الطابق الاول.png"
+                     alt="واجهة الطابق الأرضي — كام المكاتب العصرية"
+                     class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute bottom-2 left-2 bg-slate-primary/90 text-white text-[10px] px-2 py-0.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 pointer-events-none">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  <span>تكبير الواجهة</span>
+                </div>
+              </div>
             </div>
 
-            <ul class="space-y-2.5 text-sm text-gray-700 list-disc list-inside leading-relaxed mb-6">
-              <li>1,296 م² إجمالي مساحات تجزئة ومعارض</li>
-              <li>معارض تجارية مفتوحة بواجهات زجاجية وإطلالة مباشرة</li>
-              <li>مداخل وممرات رئيسية واسعة مع مصاعد ذكية</li>
-            </ul>
+            <!-- الجوال فقط: المسقط الداخلي المعتمد (ليشاهد الجوال الثنتين بوضوح) -->
+            <div class="block md:hidden bg-white border border-surface-border rounded-sm p-3.5 shadow-xs mb-4">
+              <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2.5">
+                <span class="text-xs font-bold text-slate-primary flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-stone-accent"></span>
+                  المسقط الهندسي الداخلي (CAD Blueprint)
+                </span>
+                <button type="button" onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الارضي - المكاتب و المتاجر.jpg', 'المسقط الأفقي — الطابق الأرضي')"
+                        class="text-[11px] text-slate-primary hover:text-stone-accent font-semibold flex items-center gap-1 cursor-pointer">
+                  <span>تكبير المسقط</span>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7"/></svg>
+                </button>
+              </div>
+              <div class="relative aspect-[16/10] bg-white rounded-sm overflow-hidden flex items-center justify-center p-2 cursor-pointer group border border-surface-border/60"
+                   onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الارضي - المكاتب و المتاجر.jpg', 'المسقط الأفقي — الطابق الأرضي')">
+                <img src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الارضي - المكاتب و المتاجر.jpg"
+                     alt="المسقط الهندسي — الطابق الأرضي"
+                     class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute bottom-2 left-2 bg-slate-primary/90 text-white text-[10px] px-2 py-0.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 pointer-events-none">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  <span>تكبير المخطط</span>
+                </div>
+              </div>
+            </div>
 
-            <button type="button" onclick="focusCanvas('./صور المشاريع/كام المكاتب العصرية/المخطط/الدور الارضي.jpg', 'مخطط الدور الأرضي — معارض تجارية واستقبال', 'الدور الأرضي', 'معارض تجارية واستقبال')"
-                    class="inline-flex items-center gap-2 text-xs font-bold text-slate-primary hover:text-stone-muted underline underline-offset-4 w-fit transition-colors">
-              معاينة المخطط في الشاشة ←
-            </button>
+            <!-- المواصفات والمساحات المعتمدة -->
+            <div class="bg-surface-card border border-surface-border rounded-sm p-4 sm:p-5 mb-4">
+              <span class="text-xs font-bold text-slate-primary block mb-2 pb-1.5 border-b border-surface-border/60">
+                المواصفات والمساحات المعتمدة:
+              </span>
+              <ul class="space-y-2 text-xs sm:text-sm text-gray-700 list-disc list-inside leading-relaxed">
+                <li>829 م² إجمالي المساحة التأجيرية (متوسط الوحدة: 166 م²).</li>
+                <li>467 م² مساحات الشرفات والمساحات الخارجية.</li>
+                <li>بهو رئيسي واستقبال فاخر بارتفاع ثلاثي بمساحة 136.45 م² مع مصعدين.</li>
+                <li>وحدتان تجاريتان (معارض ومتاجر) بمساحات 161.45 م² و 162.45 م².</li>
+                <li>3 وحدات مكتبية مستقلة بمساحات 103.00 م² و 155.75 م² و 172.30 م².</li>
+              </ul>
+            </div>
+
+            <div class="text-[10px] sm:text-[11px] font-mono text-stone-muted">
+              GROUND FLOOR • 829 SQM LEASABLE • RECEPTION &amp; RETAIL
+            </div>
           </div>
 
           <!-- 2. الطابق الأول -->
           <div id="stop-first"
-               class="editorial-stop pt-12 text-right"
-               data-plan-src="./صور المشاريع/كام المكاتب العصرية/المخطط/الطابق الاول.jpg"
-               data-plan-title="مخطط الطابق الأول — مساحات مكتبية فاخرة"
+               class="editorial-stop pt-8 sm:pt-10"
+               data-floor="first"
+               data-plan-src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الاول - مكاتب.jpg"
+               data-plan-title="المسقط الأفقي — الطابق الأول (6 وحدات مكتبية مع تراسات)"
                data-plan-model="الطابق الأول"
-               data-plan-badge="مساحات مكتبية فاخرة">
+               data-plan-badge="6 مساحات مكتبية + تراسات خارجية">
             
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-[11px] font-mono font-bold text-gray-500 uppercase tracking-wider">02 / 04</span>
+            <!-- Stop Header -->
+            <div class="flex items-center gap-2 mb-2 sm:mb-3">
+              <span class="text-xs font-mono font-bold text-gray-500 uppercase tracking-wider">02 / 04</span>
               <span class="text-gray-300">•</span>
               <span class="text-xs font-bold text-slate-primary bg-surface-card px-2.5 py-0.5 rounded-sm border border-surface-border">الطابق الأول</span>
             </div>
 
-            <h3 class="text-2xl sm:text-3xl font-bold text-slate-primary font-display mb-3">
-              الطابق الأول (مساحات مكتبية فاخرة)
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-primary font-display mb-1.5 sm:mb-2">
+              الطابق الأول (مساحات مكتبية متكاملة + تراسات)
             </h3>
+            <p class="text-xs sm:text-sm text-stone-muted font-medium mb-4 sm:mb-5">
+              بيئة عمل نموذجية مع شرفات خارجية وتصميم يوازن بين الإضاءة الطبيعية والخصوصية
+            </p>
 
-            <div class="inline-flex items-center gap-2 text-xs font-semibold text-slate-primary bg-white border border-surface-border px-3.5 py-1.5 rounded-sm shadow-xs mb-5 w-fit">
-              <span class="w-1.5 h-1.5 rounded-full bg-slate-primary"></span>
-              مكاتب تنفيذية • تشطيبات خشبية راقية
-            </div>
-
-            <ul class="space-y-2.5 text-sm text-gray-700 list-disc list-inside leading-relaxed mb-6">
-              <li>2,179 م² مساحات مكتبية متكاملة</li>
-              <li>تشطيبات راقية وواجهات خشبية مع إطلالات مفتوحة</li>
-              <li>ممرات توزيع فسيحة ودورات مياه مجهزة</li>
-            </ul>
-
-            <button type="button" onclick="focusCanvas('./صور المشاريع/كام المكاتب العصرية/المخطط/الطابق الاول.jpg', 'مخطط الطابق الأول — مساحات مكتبية فاخرة', 'الطابق الأول', 'مساحات مكتبية فاخرة')"
-                    class="inline-flex items-center gap-2 text-xs font-bold text-slate-primary hover:text-stone-muted underline underline-offset-4 w-fit transition-colors">
-              معاينة المخطط في الشاشة ←
-            </button>
-          </div>
-
-          <!-- 3. الطابق الثاني -->
-          <div id="stop-second"
-               class="editorial-stop pt-12 text-right"
-               data-plan-src="./صور المشاريع/كام المكاتب العصرية/المخطط/الطابق الثاني.jpg"
-               data-plan-title="مخطط الطابق الثاني — المكاتب والمسطحات الخضراء"
-               data-plan-model="الطابق الثاني"
-               data-plan-badge="مكاتب ومسطحات خضراء">
-            
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-[11px] font-mono font-bold text-gray-500 uppercase tracking-wider">03 / 04</span>
-              <span class="text-gray-300">•</span>
-              <span class="text-xs font-bold text-slate-primary bg-surface-card px-2.5 py-0.5 rounded-sm border border-surface-border">الطابق الثاني</span>
-            </div>
-
-            <h3 class="text-2xl sm:text-3xl font-bold text-slate-primary font-display mb-3">
-              الطابق الثاني (المكاتب والمسطحات الخضراء)
-            </h3>
-
-            <div class="inline-flex items-center gap-2 text-xs font-semibold text-slate-primary bg-white border border-surface-border px-3.5 py-1.5 rounded-sm shadow-xs mb-5 w-fit">
-              <span class="w-1.5 h-1.5 rounded-full bg-slate-primary"></span>
-              بيئة عمل ملهمة • ارتباط مباشر بحدائق السطح
-            </div>
-
-            <ul class="space-y-2.5 text-sm text-gray-700 list-disc list-inside leading-relaxed mb-6">
-              <li>مكاتب إدارية وتنفيذية فاخرة</li>
-              <li>وصول مباشر للمسطحات الخضراء والحدائق على السطح</li>
-              <li>نوافذ زجاجية عازلة تمتد من الأرض حتى السقف</li>
-            </ul>
-
-            <button type="button" onclick="focusCanvas('./صور المشاريع/كام المكاتب العصرية/المخطط/الطابق الثاني.jpg', 'مخطط الطابق الثاني — المكاتب والمسطحات الخضراء', 'الطابق الثاني', 'مكاتب ومسطحات خضراء')"
-                    class="inline-flex items-center gap-2 text-xs font-bold text-slate-primary hover:text-stone-muted underline underline-offset-4 w-fit transition-colors">
-              معاينة المخطط في الشاشة ←
-            </button>
-          </div>
-
-          <!-- 4. دورين التسوية -->
-          <div id="stop-basements"
-               class="editorial-stop pt-12 text-right"
-               data-plan-src="./صور المشاريع/كام المكاتب العصرية/المخطط/قبو 1.jpg"
-               data-plan-title="مخطط دورين التسوية — مواقف وخدمات لوجستية"
-               data-plan-model="دورين التسوية"
-               data-plan-badge="قبو 1 وقبو 2">
-            
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-[11px] font-mono font-bold text-gray-500 uppercase tracking-wider">04 / 04</span>
-              <span class="text-gray-300">•</span>
-              <span class="text-xs font-bold text-slate-primary bg-surface-card px-2.5 py-0.5 rounded-sm border border-surface-border">دورين التسوية</span>
-            </div>
-
-            <h3 class="text-2xl sm:text-3xl font-bold text-slate-primary font-display mb-3">
-              دورين التسوية (قبو 1 وقبو 2)
-            </h3>
-
-            <!-- Sub-switcher for Basement Levels -->
-            <div class="mb-5 p-3.5 bg-surface-card border border-surface-border rounded-sm">
-              <div class="flex items-center justify-between gap-2 mb-2.5">
+            <!-- المبنى الخارجي (واجهة الطابق الأول على اليمين) -->
+            <div class="bg-white border border-surface-border rounded-sm p-3.5 shadow-xs mb-4 sm:mb-6">
+              <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2.5">
                 <span class="text-xs font-bold text-slate-primary flex items-center gap-1.5">
-                  <span class="relative flex h-2 w-2">
-                    <span class="pulse-indicator absolute inline-flex h-full w-full rounded-full bg-slate-primary opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-slate-primary"></span>
-                  </span>
-                  اختر مستوى القبو للمعاينة في الشاشة:
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-primary"></span>
+                  المبنى الخارجي — واجهة الشرفات والتراسات وكواسر الشمس
                 </span>
-                <span id="active-basement-tag" class="text-xs font-mono font-bold text-stone-muted">قبو 1</span>
+                <button type="button" onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/خراجي - الطابق الثاني.png', 'الواجهة الخارجية — الطابق الأول')"
+                        class="text-[11px] text-slate-primary hover:text-stone-accent font-semibold flex items-center gap-1 cursor-pointer">
+                  <span>تكبير الواجهة</span>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7"/></svg>
+                </button>
               </div>
-              <div class="grid grid-cols-2 gap-2">
-                <button type="button" onclick="switchModernBasement(0)" id="modern-base-btn-0"
-                        class="modern-base-sub-btn active py-1.5 text-xs font-bold rounded-sm bg-slate-primary text-white transition-all text-center">
-                  قبو 1
-                </button>
-                <button type="button" onclick="switchModernBasement(1)" id="modern-base-btn-1"
-                        class="modern-base-sub-btn py-1.5 text-xs font-medium rounded-sm border border-stone-muted/40 text-gray-700 bg-white hover:border-slate-primary transition-all text-center">
-                  قبو 2
-                </button>
+              <div class="relative aspect-[16/9] bg-slate-primary rounded-sm overflow-hidden flex items-center justify-center p-2 cursor-pointer group border border-surface-border/60"
+                   onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/خراجي - الطابق الثاني.png', 'الواجهة الخارجية — الطابق الأول')">
+                <img src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/خراجي - الطابق الثاني.png"
+                     alt="واجهة الطابق الأول — كام المكاتب العصرية"
+                     class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute bottom-2 left-2 bg-slate-primary/90 text-white text-[10px] px-2 py-0.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 pointer-events-none">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  <span>تكبير الواجهة</span>
+                </div>
               </div>
             </div>
 
-            <div class="inline-flex items-center gap-2 text-xs font-semibold text-slate-primary bg-white border border-surface-border px-3.5 py-1.5 rounded-sm shadow-xs mb-5 w-fit">
-              <span class="w-1.5 h-1.5 rounded-full bg-slate-primary"></span>
-              97 موقف سيارات • مستودعات وخدمات متطورة
+            <!-- الجوال فقط: المسقط الداخلي المعتمد -->
+            <div class="block md:hidden bg-white border border-surface-border rounded-sm p-3.5 shadow-xs mb-4">
+              <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2.5">
+                <span class="text-xs font-bold text-slate-primary flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-stone-accent"></span>
+                  المسقط الهندسي الداخلي (CAD Layout - 6 مكاتب)
+                </span>
+                <button type="button" onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الاول - مكاتب.jpg', 'المسقط الأفقي — الطابق الأول')"
+                        class="text-[11px] text-slate-primary hover:text-stone-accent font-semibold flex items-center gap-1 cursor-pointer">
+                  <span>تكبير المسقط</span>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7"/></svg>
+                </button>
+              </div>
+              <div class="relative aspect-[16/10] bg-white rounded-sm overflow-hidden flex items-center justify-center p-2 cursor-pointer group border border-surface-border/60"
+                   onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الاول - مكاتب.jpg', 'المسقط الأفقي — الطابق الأول')">
+                <img src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الاول - مكاتب.jpg"
+                     alt="المسقط الهندسي — الطابق الأول"
+                     class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute bottom-2 left-2 bg-slate-primary/90 text-white text-[10px] px-2 py-0.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 pointer-events-none">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  <span>تكبير المخطط</span>
+                </div>
+              </div>
             </div>
 
-            <ul class="space-y-2.5 text-sm text-gray-700 list-disc list-inside leading-relaxed mb-6">
-              <li>97 موقفاً مخصصاً للسيارات موزعة على طابقين</li>
-              <li>مناطق مخصصة للمستودعات وغرف الخدمات اللوجستية والكهروميكانيك</li>
-            </ul>
+            <!-- المواصفات والمساحات المعتمدة -->
+            <div class="bg-surface-card border border-surface-border rounded-sm p-4 sm:p-5 mb-4">
+              <span class="text-xs font-bold text-slate-primary block mb-2 pb-1.5 border-b border-surface-border/60">
+                المواصفات والمساحات المعتمدة:
+              </span>
+              <ul class="space-y-2 text-xs sm:text-sm text-gray-700 list-disc list-inside leading-relaxed">
+                <li>948 م² إجمالي المساحة التأجيرية (متوسط الوحدة: 158 م²).</li>
+                <li>172 م² مساحات الشرفات (تراس وممرات 119.18 م² + جلسات خارجية 37.83 م²).</li>
+                <li>6 وحدات مكتبية (مكتبين 192.96 م²، مكتبين 150.47 م²، مكتب 86.48 م²، ومكتب 73.60 م²).</li>
+                <li>تشطيبات فاخرة من حجر الترافرتين والخشب المضلع والتفاصيل البرونزية.</li>
+              </ul>
+            </div>
 
-            <button type="button" onclick="focusCanvas('./صور المشاريع/كام المكاتب العصرية/المخطط/قبو 1.jpg', 'مخطط دورين التسوية — مواقف وخدمات لوجستية', 'دورين التسوية', 'قبو 1')"
-                    class="inline-flex items-center gap-2 text-xs font-bold text-slate-primary hover:text-stone-muted underline underline-offset-4 w-fit transition-colors">
-              معاينة المخطط في الشاشة ←
-            </button>
+            <div class="text-[10px] sm:text-[11px] font-mono text-stone-muted">
+              FIRST FLOOR • 948 SQM LEASABLE • 6 INDEPENDENT OFFICES
+            </div>
+          </div>
+
+          <!-- 3. الطابق الثاني والسطح -->
+          <div id="stop-second"
+               class="editorial-stop pt-8 sm:pt-10"
+               data-floor="second"
+               data-plan-src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الثاني - مكاتب.jpg"
+               data-plan-title="المسقط الأفقي — الطابق الثاني (مكاتب تنفيذية وشرفات بانورامية)"
+               data-plan-model="الطابق الثاني والسطح"
+               data-plan-badge="4 مكاتب تنفيذية + شرفات وسطح بانورامي">
+            
+            <!-- Stop Header -->
+            <div class="flex items-center gap-2 mb-2 sm:mb-3">
+              <span class="text-xs font-mono font-bold text-gray-500 uppercase tracking-wider">03 / 04</span>
+              <span class="text-gray-300">•</span>
+              <span class="text-xs font-bold text-slate-primary bg-surface-card px-2.5 py-0.5 rounded-sm border border-surface-border">الطابق الثاني والسطح</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-primary font-display mb-1.5 sm:mb-2">
+              الطابق الثاني (مكاتب تنفيذية + شرفات وسطح بانورامي)
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-muted font-medium mb-4 sm:mb-5">
+              مستوى تنفيذي حصري يضم مكاتب فاخرة وإمكانية الوصول المباشر للسطح الأخضر واللاونج
+            </p>
+
+            <!-- المبنى الخارجي (واجهة الطابق الثاني على اليمين) -->
+            <div class="bg-white border border-surface-border rounded-sm p-3.5 shadow-xs mb-4 sm:mb-6">
+              <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2.5">
+                <span class="text-xs font-bold text-slate-primary flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-primary"></span>
+                  المبنى الخارجي — واجهة الطابق العلوي والسطح البانورامي
+                </span>
+                <button type="button" onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/خارجي الطابق الثالث.png', 'الواجهة الخارجية — الطابق الثاني والسطح')"
+                        class="text-[11px] text-slate-primary hover:text-stone-accent font-semibold flex items-center gap-1 cursor-pointer">
+                  <span>تكبير الواجهة</span>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7"/></svg>
+                </button>
+              </div>
+              <div class="relative aspect-[16/9] bg-slate-primary rounded-sm overflow-hidden flex items-center justify-center p-2 cursor-pointer group border border-surface-border/60"
+                   onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/خارجي الطابق الثالث.png', 'الواجهة الخارجية — الطابق الثاني والسطح')">
+                <img src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/خارجي الطابق الثالث.png"
+                     alt="واجهة الطابق الثاني والسطح — كام المكاتب العصرية"
+                     class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute bottom-2 left-2 bg-slate-primary/90 text-white text-[10px] px-2 py-0.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 pointer-events-none">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  <span>تكبير الواجهة</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- الجوال فقط: المسقط الداخلي المعتمد -->
+            <div class="block md:hidden bg-white border border-surface-border rounded-sm p-3.5 shadow-xs mb-4">
+              <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2.5">
+                <span class="text-xs font-bold text-slate-primary flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-stone-accent"></span>
+                  المسقط الهندسي الداخلي (CAD Layout - 4 مكاتب والسطح)
+                </span>
+                <button type="button" onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الثاني - مكاتب.jpg', 'المسقط الأفقي — الطابق الثاني')"
+                        class="text-[11px] text-slate-primary hover:text-stone-accent font-semibold flex items-center gap-1 cursor-pointer">
+                  <span>تكبير المسقط</span>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7"/></svg>
+                </button>
+              </div>
+              <div class="relative aspect-[16/10] bg-white rounded-sm overflow-hidden flex items-center justify-center p-2 cursor-pointer group border border-surface-border/60"
+                   onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الثاني - مكاتب.jpg', 'المسقط الأفقي — الطابق الثاني')">
+                <img src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الثاني - مكاتب.jpg"
+                     alt="المسقط الهندسي — الطابق الثاني"
+                     class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute bottom-2 left-2 bg-slate-primary/90 text-white text-[10px] px-2 py-0.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 pointer-events-none">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  <span>تكبير المخطط</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- المواصفات والمساحات المعتمدة -->
+            <div class="bg-surface-card border border-surface-border rounded-sm p-4 sm:p-5 mb-4">
+              <span class="text-xs font-bold text-slate-primary block mb-2 pb-1.5 border-b border-surface-border/60">
+                المواصفات والمساحات المعتمدة:
+              </span>
+              <ul class="space-y-2 text-xs sm:text-sm text-gray-700 list-disc list-inside leading-relaxed">
+                <li>442 م² إجمالي المساحة التأجيرية (متوسط الوحدة: 111 م²).</li>
+                <li>619 م² مساحات الشرفات والتراسات البانورامية المفتوحة على السماء.</li>
+                <li>4 وحدات مكتبية تنفيذية بمساحات: 106.31 م²، 102.91 م²، 98.75 م²، و 79.19 م².</li>
+                <li>سطح مجهز بالكامل بجلسات لتناول الطعام وأحواض نباتية طبيعية.</li>
+              </ul>
+            </div>
+
+            <div class="text-[10px] sm:text-[11px] font-mono text-stone-muted">
+              SECOND FLOOR &amp; ROOF • 442 SQM LEASABLE • 4 EXECUTIVE OFFICES
+            </div>
+          </div>
+
+          <!-- 4. مستويات القبو ومواقف السيارات -->
+          <div id="stop-basement"
+               class="editorial-stop pt-8 sm:pt-10"
+               data-floor="basement"
+               data-plan-src="./صور المشاريع/كام المكاتب العصرية/المخطط/قبو 1.jpg"
+               data-plan-title="مسقط قبو 1 (Basement 1 - 38 موقفاً)"
+               data-plan-model="مستويات القبو"
+               data-plan-badge="90 موقفاً مخصصاً • 3 مستويات">
+            
+            <!-- Stop Header -->
+            <div class="flex items-center gap-2 mb-2 sm:mb-3">
+              <span class="text-xs font-mono font-bold text-gray-500 uppercase tracking-wider">04 / 04</span>
+              <span class="text-gray-300">•</span>
+              <span class="text-xs font-bold text-slate-primary bg-surface-card px-2.5 py-0.5 rounded-sm border border-surface-border">مستويات القبو</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-primary font-display mb-1.5 sm:mb-2">
+              مستويات القبو ومواقف السيارات (90 موقفاً)
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-muted font-medium mb-4 sm:mb-5">
+              مواقف سيارات واسعة ومريحة موزعة على طابقين تحت الأرض مع مواقف إضافية بمستوى الأرض
+            </p>
+
+            <!-- مخطط القبو الثاني على اليمين -->
+            <div class="bg-white border border-surface-border rounded-sm p-3.5 shadow-xs mb-4 sm:mb-6">
+              <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2.5">
+                <span class="text-xs font-bold text-slate-primary flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-primary"></span>
+                  مخطط القبو الثاني (Basement 2 - 44 موقفاً)
+                </span>
+                <button type="button" onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/المخطط/قبو 2.jpg', 'مخطط مواقف القبو الثاني (Basement 2)')"
+                        class="text-[11px] text-slate-primary hover:text-stone-accent font-semibold flex items-center gap-1 cursor-pointer">
+                  <span>تكبير المسقط</span>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7"/></svg>
+                </button>
+              </div>
+              <div class="relative aspect-[16/9] bg-white rounded-sm overflow-hidden flex items-center justify-center p-2 cursor-pointer group border border-surface-border/60"
+                   onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/المخطط/قبو 2.jpg', 'مخطط مواقف القبو الثاني (Basement 2)')">
+                <img src="./صور المشاريع/كام المكاتب العصرية/المخطط/قبو 2.jpg"
+                     alt="مخطط مواقف القبو الثاني — كام المكاتب العصرية"
+                     class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute bottom-2 left-2 bg-slate-primary/90 text-white text-[10px] px-2 py-0.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 pointer-events-none">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  <span>تكبير المخطط</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- الجوال فقط: المسقط الداخلي المعتمد لقبو 1 -->
+            <div class="block md:hidden bg-white border border-surface-border rounded-sm p-3.5 shadow-xs mb-4">
+              <div class="flex items-center justify-between pb-2 border-b border-surface-border mb-2.5">
+                <span class="text-xs font-bold text-slate-primary flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-stone-accent"></span>
+                  مخطط القبو الأول (Basement 1 - 38 موقفاً)
+                </span>
+                <button type="button" onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/المخطط/قبو 1.jpg', 'مسقط قبو 1 (Basement 1)')"
+                        class="text-[11px] text-slate-primary hover:text-stone-accent font-semibold flex items-center gap-1 cursor-pointer">
+                  <span>تكبير المسقط</span>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7"/></svg>
+                </button>
+              </div>
+              <div class="relative aspect-[16/10] bg-white rounded-sm overflow-hidden flex items-center justify-center p-2 cursor-pointer group border border-surface-border/60"
+                   onclick="openLightbox('./صور المشاريع/كام المكاتب العصرية/المخطط/قبو 1.jpg', 'مسقط قبو 1 (Basement 1)')">
+                <img src="./صور المشاريع/كام المكاتب العصرية/المخطط/قبو 1.jpg"
+                     alt="مخطط مواقف القبو الأول"
+                     class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                <div class="absolute bottom-2 left-2 bg-slate-primary/90 text-white text-[10px] px-2 py-0.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 pointer-events-none">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  <span>تكبير المخطط</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- المواصفات والمساحات المعتمدة -->
+            <div class="bg-surface-card border border-surface-border rounded-sm p-4 sm:p-5 mb-4">
+              <span class="text-xs font-bold text-slate-primary block mb-2 pb-1.5 border-b border-surface-border/60">
+                المواصفات والمساحات المعتمدة:
+              </span>
+              <ul class="space-y-2 text-xs sm:text-sm text-gray-700 list-disc list-inside leading-relaxed">
+                <li>90 موقفاً مخصصاً للسيارات موزعة على 3 مستويات.</li>
+                <li>8 مواقف أرضية لتسهيل وصول الزوار.</li>
+                <li>38 موقفاً في القبو الأول (Basement 1).</li>
+                <li>44 موقفاً في القبو الثاني (Basement 2).</li>
+              </ul>
+            </div>
+
+            <div class="text-[10px] sm:text-[11px] font-mono text-stone-muted">
+              BASEMENTS B1 &amp; B2 • 90 SECURE PARKING SLOTS
+            </div>
           </div>
 
         </div>
 
-        <!-- Left Column (Desktop 55% / 7 cols): Sticky Blueprint Viewport -->
-        <div id="blueprint-canvas-col" class="md:col-span-6 lg:col-span-7 order-1 md:order-2 sticky top-20 sm:top-24 lg:top-28 z-20 w-full">
-          <div class="bg-white/95 backdrop-blur-md border border-surface-border rounded-sm shadow-md p-3.5 sm:p-5 lg:h-[76vh] flex flex-col justify-between overflow-hidden">
+        <!-- ══════════════════════════════════════════════════════ -->
+        <!-- LEFT COLUMN (يسار - 55%): STICKY CAD FLOOR BLUEPRINT (DESKTOP) -->
+        <!-- ══════════════════════════════════════════════════════ -->
+        <div id="sticky-viewport-col" class="hidden md:block md:col-span-6 lg:col-span-7 order-1 md:order-2 sticky top-20 sm:top-24 lg:top-28 z-20 w-full">
+          <div class="bg-white/95 backdrop-blur-md border border-surface-border rounded-sm shadow-md p-4 sm:p-5 lg:h-[80vh] flex flex-col justify-between overflow-hidden text-right">
             
             <!-- Canvas Top Header -->
             <div class="flex items-center justify-between pb-3 border-b border-surface-border">
-              <div class="flex items-center gap-2 text-right">
-                <span class="w-2 h-2 rounded-full bg-slate-primary animate-pulse"></span>
-                <span id="canvas-model-tag" class="text-xs sm:text-sm font-bold text-slate-primary">الدور الأرضي</span>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-stone-accent animate-pulse"></span>
+                <span id="sticky-model-tag" class="text-xs sm:text-sm font-bold text-slate-primary">الطابق الأرضي</span>
                 <span class="text-gray-300">•</span>
-                <span id="canvas-badge-tag" class="text-xs text-stone-muted font-medium">معارض تجارية واستقبال</span>
+                <span id="sticky-badge-tag" class="text-xs text-stone-muted font-medium">معارض + مكاتب + بهو ثلاثي الارتفاع</span>
               </div>
-              <button type="button" onclick="openCurrentCanvasLightbox()" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-primary hover:text-stone-muted bg-surface-card hover:bg-gray-200 border border-surface-border px-3 py-1.5 rounded-sm transition-colors" title="تكبير المخطط">
+              
+              <!-- Lightbox Zoom Button -->
+              <button type="button" onclick="openCurrentStickyLightbox()" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-primary hover:text-stone-accent bg-surface-card hover:bg-gray-200 border border-surface-border px-3 py-1.5 rounded-sm transition-colors cursor-pointer" title="تكبير المخطط بملء الشاشة">
                 <span>تكبير المخطط</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7"/></svg>
               </button>
             </div>
 
-            <!-- Canvas Image Frame with Crossfade -->
-            <div class="relative flex-1 flex items-center justify-center p-2 sm:p-4 my-2 sm:my-3 overflow-hidden bg-surface-light rounded-sm border border-surface-border/60 min-h-[220px] sm:min-h-[300px] lg:min-h-[420px] cursor-pointer group" onclick="openCurrentCanvasLightbox()">
-              <img id="sticky-blueprint-img"
-                   src="./صور المشاريع/كام المكاتب العصرية/المخطط/الدور الارضي.jpg"
-                   alt="المخطط المعماري المعتمد"
-                   class="max-h-[24vh] sm:max-h-[34vh] lg:max-h-[52vh] max-w-full object-contain mx-auto transition-opacity duration-300 opacity-100 group-hover:scale-[1.01]" />
+            <!-- Canvas Image Frame: Pure CAD Floor Blueprint -->
+            <div class="relative flex-1 flex items-center justify-center p-3 sm:p-5 my-3 overflow-hidden bg-surface-light rounded-sm border border-surface-border/60 min-h-[300px] sm:min-h-[380px] lg:min-h-[460px] cursor-pointer group"
+                 onclick="openCurrentStickyLightbox()">
               
-              <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-slate-primary/90 text-white text-[10px] sm:text-[11px] px-2.5 py-1 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 pointer-events-none">
+              <img id="sticky-blueprint-img"
+                   src="./صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الارضي - المكاتب و المتاجر.jpg"
+                   alt="المخطط المعماري المعتمد"
+                   class="max-h-full max-w-full object-contain mx-auto transition-all duration-300 opacity-100 group-hover:scale-[1.02]" />
+
+              <div class="absolute bottom-3 left-3 bg-slate-primary/90 text-white text-[11px] px-3 py-1 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none flex items-center gap-1.5 shadow-md">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                <span>انقر للتكبير في وضع ملء الشاشة</span>
+                <span>انقر للتكبير بملء الشاشة</span>
               </div>
             </div>
 
-            <!-- Canvas Bottom Footer Info -->
+            <!-- Canvas Bottom Bar: Clean Architectural Specs Attribution & Basement Switcher -->
             <div class="pt-3 border-t border-surface-border flex items-center justify-between text-xs text-gray-500">
-              <span class="font-mono text-[11px] text-gray-400">CAD / REVIT • Architectural Drawing</span>
+              <div id="sticky-basement-switch" class="hidden items-center gap-2">
+                <span class="text-[11px] text-gray-600 font-bold">عرض مستوى القبو:</span>
+                <div class="inline-flex p-0.5 bg-surface-card border border-surface-border rounded-xs gap-1">
+                  <button type="button" onclick="switchStickyBasement(0)" id="stop-base-btn-0"
+                          class="stop-base-btn active px-2.5 py-0.5 text-[10px] font-bold rounded-xs bg-slate-primary text-white transition-all cursor-pointer shadow-xs">
+                    قبو 1
+                  </button>
+                  <button type="button" onclick="switchStickyBasement(1)" id="stop-base-btn-1"
+                          class="stop-base-btn px-2.5 py-0.5 text-[10px] font-medium rounded-xs border border-surface-border text-gray-700 bg-white hover:border-slate-primary transition-all cursor-pointer">
+                    قبو 2
+                  </button>
+                </div>
+              </div>
+              <span id="sticky-cad-attribution" class="font-mono text-[11px] text-gray-400">AUTOCAD / REVIT • OFFICIAL CAD BLUEPRINT</span>
               <span class="text-[11px] text-stone-muted font-medium">مخطط هندسي معتمد — شركة كام العقارية</span>
             </div>
 
@@ -931,91 +1210,147 @@
   <!-- JAVASCRIPT LOGIC                                       -->
   <!-- ══════════════════════════════════════════════════════ -->
   <script>
-    // ─── STICKY BLUEPRINT & BASEMENT LOGIC ───
-    let currentStickySrc = './صور المشاريع/كام المكاتب العصرية/المخطط/الدور الارضي.jpg';
-    let currentStickyTitle = 'مخطط الدور الأرضي — معارض تجارية واستقبال';
+    // ─── NON-REDUNDANT STICKY SPLIT-SCROLL ARCHITECTURAL ENGINE ───
+    let currentStickyData = {
+      planSrc: './صور المشاريع/كام المكاتب العصرية/تطوير الموقع/الطابق الارضي - المكاتب و المتاجر.jpg',
+      planTitle: 'المسقط الأفقي — الطابق الأرضي (معارض ومكاتب وبهو الاستقبال)',
+      model: 'الطابق الأرضي',
+      badge: 'معارض + مكاتب + بهو ثلاثي الارتفاع'
+    };
 
-    function setStickyBlueprint(src, title, model, badge) {
-      currentStickySrc = src;
-      currentStickyTitle = title;
-      const img = document.getElementById('sticky-blueprint-img');
-      const modelTag = document.getElementById('canvas-model-tag');
-      const badgeTag = document.getElementById('canvas-badge-tag');
-
-      if (modelTag && model) modelTag.textContent = model;
-      if (badgeTag && badge) badgeTag.textContent = badge;
-
-      if (img && img.src.indexOf(encodeURI(src)) === -1 && !img.src.endsWith(src)) {
-        img.style.opacity = '0.2';
-        setTimeout(() => {
-          img.src = src;
-          img.alt = title;
-          img.style.opacity = '1';
-        }, 120);
-      }
-    }
-
-    function openCurrentCanvasLightbox() {
-      openLightbox(currentStickySrc, currentStickyTitle);
-    }
-
-    function focusCanvas(src, title, model, badge) {
-      if (src) setStickyBlueprint(src, title, model, badge);
-      const canvas = document.getElementById('blueprint-canvas-col');
-      if (canvas && window.innerWidth < 1024) {
-        canvas.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
-
-    const modernBasements = [
-      { name: 'قبو 1', src: './صور المشاريع/كام المكاتب العصرية/المخطط/قبو 1.jpg', title: 'مخطط قبو 1 — كام المكاتب العصرية' },
-      { name: 'قبو 2', src: './صور المشاريع/كام المكاتب العصرية/المخطط/قبو 2.jpg', title: 'مخطط قبو 2 — كام المكاتب العصرية' }
+    const stickyBasementFiles = [
+      { name: 'قبو 1', src: './صور المشاريع/كام المكاتب العصرية/المخطط/قبو 1.jpg', title: 'مسقط قبو 1 (Basement 1 - 38 موقفاً)' },
+      { name: 'قبو 2', src: './صور المشاريع/كام المكاتب العصرية/المخطط/قبو 2.jpg', title: 'مسقط قبو 2 (Basement 2 - 44 موقفاً)' }
     ];
 
-    function switchModernBasement(index) {
-      if (index < 0 || index >= modernBasements.length) return;
-      const b = modernBasements[index];
-      const tag = document.getElementById('active-basement-tag');
-      if (tag) tag.textContent = b.name;
+    function updateStickyViewport(stopEl) {
+      if (!stopEl) return;
+      const floor = stopEl.getAttribute('data-floor');
+      const planSrc = stopEl.getAttribute('data-plan-src');
+      const planTitle = stopEl.getAttribute('data-plan-title');
+      const model = stopEl.getAttribute('data-plan-model');
+      const badge = stopEl.getAttribute('data-plan-badge');
 
-      const btns = document.querySelectorAll('.modern-base-sub-btn');
-      btns.forEach((btn, idx) => {
-        if (idx === index) {
-          btn.className = 'modern-base-sub-btn active py-1.5 text-xs font-bold rounded-sm bg-slate-primary text-white transition-all text-center';
+      currentStickyData = { planSrc, planTitle, model, badge };
+
+      // Update Tags
+      const modelTag = document.getElementById('sticky-model-tag');
+      const badgeTag = document.getElementById('sticky-badge-tag');
+      if (modelTag) modelTag.textContent = model;
+      if (badgeTag) badgeTag.textContent = badge;
+
+      // Update Blueprint Image with smooth crossfade
+      const bpImg = document.getElementById('sticky-blueprint-img');
+      if (bpImg && bpImg.src !== planSrc) {
+        bpImg.style.opacity = '0.2';
+        setTimeout(() => {
+          bpImg.src = planSrc;
+          bpImg.alt = planTitle;
+          bpImg.style.opacity = '1';
+        }, 120);
+      }
+
+      // Toggle Basement Switcher
+      const bSwitch = document.getElementById('sticky-basement-switch');
+      const cadAttr = document.getElementById('sticky-cad-attribution');
+      if (bSwitch) {
+        if (floor === 'basement') {
+          bSwitch.classList.remove('hidden');
+          bSwitch.classList.add('flex');
+          if (cadAttr) cadAttr.classList.add('hidden');
         } else {
-          btn.className = 'modern-base-sub-btn py-1.5 text-xs font-medium rounded-sm border border-stone-muted/40 text-gray-700 bg-white hover:border-slate-primary transition-all text-center';
+          bSwitch.classList.remove('flex');
+          bSwitch.classList.add('hidden');
+          if (cadAttr) cadAttr.classList.remove('hidden');
+        }
+      }
+
+      // Update Nav Buttons
+      const navBtns = {
+        ground: 'nav-btn-ground',
+        first: 'nav-btn-first',
+        second: 'nav-btn-second',
+        basement: 'nav-btn-basement'
+      };
+
+      Object.keys(navBtns).forEach(f => {
+        const btn = document.getElementById(navBtns[f]);
+        if (btn) {
+          if (f === floor) {
+            btn.className = 'floor-nav-btn active px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-sm transition-all cursor-pointer ring-2 ring-stone-muted/60 bg-slate-primary text-white font-bold shadow-md whitespace-nowrap flex-shrink-0';
+          } else {
+            btn.className = 'floor-nav-btn px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-sm transition-all cursor-pointer bg-white border border-surface-border text-gray-700 hover:border-slate-primary hover:text-slate-primary font-medium whitespace-nowrap flex-shrink-0';
+          }
         }
       });
-
-      setStickyBlueprint(b.src, b.title, 'دورين التسوية', b.name);
     }
 
-    // IntersectionObserver for Editorial Stops
+    function switchStickyBasement(idx) {
+      if (idx < 0 || idx >= stickyBasementFiles.length) return;
+      const b = stickyBasementFiles[idx];
+
+      const btn0 = document.getElementById('stop-base-btn-0');
+      const btn1 = document.getElementById('stop-base-btn-1');
+      if (btn0 && btn1) {
+        if (idx === 0) {
+          btn0.className = 'stop-base-btn active px-2.5 py-0.5 text-[10px] font-bold rounded-xs bg-slate-primary text-white transition-all cursor-pointer shadow-xs';
+          btn1.className = 'stop-base-btn px-2.5 py-0.5 text-[10px] font-medium rounded-xs border border-surface-border text-gray-700 bg-white hover:border-slate-primary transition-all cursor-pointer';
+        } else {
+          btn1.className = 'stop-base-btn active px-2.5 py-0.5 text-[10px] font-bold rounded-xs bg-slate-primary text-white transition-all cursor-pointer shadow-xs';
+          btn0.className = 'stop-base-btn px-2.5 py-0.5 text-[10px] font-medium rounded-xs border border-surface-border text-gray-700 bg-white hover:border-slate-primary transition-all cursor-pointer';
+        }
+      }
+
+      currentStickyData.planSrc = b.src;
+      currentStickyData.planTitle = b.title;
+
+      const bpImg = document.getElementById('sticky-blueprint-img');
+      if (bpImg) {
+        bpImg.style.opacity = '0.2';
+        setTimeout(() => {
+          bpImg.src = b.src;
+          bpImg.alt = b.title;
+          bpImg.style.opacity = '1';
+        }, 100);
+      }
+    }
+
+    function scrollToFloorStop(stopId) {
+      const el = document.getElementById(stopId);
+      if (el) {
+        // 1. Immediately update sticky viewport for snappy UX
+        updateStickyViewport(el);
+
+        // 2. Smoothly scroll into view with header offset
+        const yOffset = -100;
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+
+    function openCurrentStickyLightbox() {
+      openLightbox(currentStickyData.planSrc, currentStickyData.planTitle);
+    }
+
+    // Precise IntersectionObserver Engine for Smooth Rolling
     document.addEventListener('DOMContentLoaded', () => {
       const stops = document.querySelectorAll('.editorial-stop');
       if ('IntersectionObserver' in window && stops.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
+        const obs = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               stops.forEach(s => s.classList.remove('is-active'));
               entry.target.classList.add('is-active');
-
-              const src = entry.target.getAttribute('data-plan-src');
-              const title = entry.target.getAttribute('data-plan-title');
-              const model = entry.target.getAttribute('data-plan-model');
-              const badge = entry.target.getAttribute('data-plan-badge');
-              if (src) {
-                setStickyBlueprint(src, title, model, badge);
-              }
+              updateStickyViewport(entry.target);
             }
           });
         }, {
           root: null,
-          rootMargin: '-20% 0px -40% 0px',
-          threshold: 0.2
+          rootMargin: '-10% 0px -25% 0px',
+          threshold: 0.15
         });
 
-        stops.forEach(stop => observer.observe(stop));
+        stops.forEach(stop => obs.observe(stop));
       }
     });
 
