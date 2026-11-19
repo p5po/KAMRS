@@ -144,6 +144,11 @@
               onerror="this.onerror=null; this.src='https://www.kamrs.com/assets/images/logo.png';"
             />
           </a>
+          <div class="hidden md:block w-px h-6 bg-white/15"></div>
+          <a href="index.html" class="hidden md:inline-flex items-center gap-2 text-xs font-semibold text-gray-300 hover:text-white transition-colors">
+            <svg class="w-3.5 h-3.5 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+            <span>العودة للرئيسية</span>
+          </a>
         </div>
 
         <!-- Desktop Navigation -->
@@ -182,14 +187,13 @@
   <!-- HERO & OVERVIEW SECTION                                -->
   <!-- ══════════════════════════════════════════════════════ -->
   <section id="overview" class="relative pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-44 lg:pb-32 bg-slate-primary overflow-hidden border-b border-white/[0.08]">
-    <!-- Featured Full Exterior Tower Render as Hero Background -->
-    <div class="absolute inset-0 z-0">
-      <img
-        src="./صور المشاريع/كام البرج/6a7839ea4ce60953f7c67745_1-05.jpg"
-        alt="خلفية كام البرج المعمارية"
-        class="w-full h-full object-cover object-center opacity-30 scale-105 transform pointer-events-none"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-primary via-slate-primary/90 to-slate-primary/60"></div>
+    <!-- Hero Background Image & Looping Ambient Video -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <video autoplay loop muted playsinline class="w-full h-full object-cover object-center opacity-25 scale-105">
+        <source src="./صور المشاريع/كام البرج/تطوير الموقع/Creating_real_estate_commercial_…_19db7e8a__1080p.mp4" type="video/mp4" />
+        <source src="./تطوير الموقع/Creating_real_estate_commercial_…_19db7e8a__1080p.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-primary via-slate-primary/85 to-slate-primary/60"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -279,7 +283,21 @@
     </div>
   </section>
 
-<!-- ══════════════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- FULL-WIDTH CINEMATIC VIDEO (من اليمين إلى اليسار كامل)  -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="w-full bg-black overflow-hidden border-b border-surface-border">
+    <div class="w-full relative aspect-[16/9] sm:aspect-[21/9] max-h-[75vh]">
+      <video autoplay loop muted playsinline
+             poster="./صور المشاريع/كام البرج/69df7fe325ac227f850ab49f_Header.jpg"
+             class="w-full h-full object-cover">
+        <source src="./صور المشاريع/كام البرج/تطوير الموقع/Creating_real_estate_commercial_…_19db7e8a__1080p.mp4" type="video/mp4" />
+        <source src="./تطوير الموقع/Creating_real_estate_commercial_…_19db7e8a__1080p.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
   <!-- GALLERY (#gallery) - PURE ARCHITECTURAL RENDERS        -->
   <!-- ══════════════════════════════════════════════════════ -->
   <section id="gallery" class="py-16 sm:py-24 bg-white border-b border-surface-border">
