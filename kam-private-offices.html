@@ -167,14 +167,13 @@
 
   <!-- HERO -->
   <section id="overview" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-slate-primary overflow-hidden border-b border-white/[0.08]">
-    <div class="absolute inset-0 z-0">
-      <img
-        src="./كام المكاتب الخاصة/صور التصميم/6a6f5fab37840c9f1a2c17ed_GALA-01.png"
-        alt="خلفية كام المكاتب الخاصة المعمارية"
-        class="w-full h-full object-cover object-center opacity-30 scale-105 transform pointer-events-none"
-        onerror="this.src='./assets/images/kam-malqa-main.jpg';"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-primary via-slate-primary/90 to-slate-primary/75"></div>
+    <!-- Hero Background Image & Looping Ambient Video -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <video autoplay loop muted playsinline class="w-full h-full object-cover object-center opacity-25 scale-105">
+        <source src="./كام المكاتب الخاصة/تطوير الموقع/Creating_commercial_film_for_KAM…_f558a25a__1080p.mp4" type="video/mp4" />
+        <source src="./تطوير الموقع/Creating_commercial_film_for_KAM…_f558a25a__1080p.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-primary via-slate-primary/85 to-slate-primary/60"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -253,6 +252,20 @@
 
       </div>
 
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- FULL-WIDTH CINEMATIC VIDEO (من اليمين إلى اليسار كامل)  -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="w-full bg-black overflow-hidden border-b border-surface-border">
+    <div class="w-full relative aspect-[16/9] sm:aspect-[21/9] max-h-[75vh]">
+      <video autoplay loop muted playsinline
+             poster="./كام المكاتب الخاصة/صور التصميم/6a6f5fab37840c9f1a2c17ed_GALA-01.png"
+             class="w-full h-full object-cover">
+        <source src="./كام المكاتب الخاصة/تطوير الموقع/Creating_commercial_film_for_KAM…_f558a25a__1080p.mp4" type="video/mp4" />
+        <source src="./تطوير الموقع/Creating_commercial_film_for_KAM…_f558a25a__1080p.mp4" type="video/mp4" />
+      </video>
     </div>
   </section>
 
